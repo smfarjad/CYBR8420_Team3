@@ -78,22 +78,24 @@ https://github.com/Trusted-AI/adversarial-robustness-toolbox
 
 
 **Team Reflection:**
-**Mohammed Alfawzan**
+
+
+***Mohammed Alfawzan***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**Sheikh Muhammad Farjad**
+***Sheikh Muhammad Farjad***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**Tyler McCoid**
+***Tyler McCoid***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**Joe Nguyen**
+***Joe Nguyen***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**John Winchester**
+***John Winchester***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
