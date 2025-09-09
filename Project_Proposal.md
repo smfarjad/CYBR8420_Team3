@@ -10,7 +10,7 @@ This document outlines our team's proposal for the project, focusing on the secu
 https://github.com/smfarjad/CYBR8420_Team3
 
 **GitHub Project Board:**
-[Insert link to your team's GitHub Project Board]
+https://github.com/users/smfarjad/projects/3
 
 ---
 
@@ -78,22 +78,22 @@ https://github.com/Trusted-AI/adversarial-robustness-toolbox
 
 
 **Team Reflection:**
-**[Mohammed Alfawzan]**
+**Mohammed Alfawzan**
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**[Sheikh Muhammad Farjad]**
+**Sheikh Muhammad Farjad**
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**[Tyler McCoid]**
+**Tyler McCoid**
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**[Joe Nguyen]**
+**Joe Nguyen**
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
-**[John Winchester]**
+**John Winchester**
 - **What did you learn?**: [Your personal learning experience from this assignment.]
 - **What did you find most useful?**: [The most valuable part of the process for you.]
