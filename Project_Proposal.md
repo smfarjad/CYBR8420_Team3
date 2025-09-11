@@ -76,6 +76,29 @@ https://github.com/Trusted-AI/adversarial-robustness-toolbox
 
 **Security-Related History:**
 
+The Adversarial Robustness Toolbox (ART) has had a few security-related vulnerabilities. The vulnerabilities were tied to external dependencies rather than its own codebase.  
+
+**CVE-2021-28678**  
+
+-Affected ART versions prior to 1.6.1 due to a vulnerable Pillow dependency 
+
+-Fixed in version 1.6.1, updated to a secure version  
+
+**CVE-2021-34552**  
+
+-Also linked to Pillow 
+
+-Remediated in version 1.7.1, updated to a secure version 
+
+**CVE-2021-23437** 
+
+-Dependency flaws linked to Pillow
+
+-Resolved in version 1.8.0, updated to a secure version 
+
+The latest version 1.19.1 (January 22, 2025) has no known security vulnerabilities.  
+
+
 
 **Team Reflection:**
 
