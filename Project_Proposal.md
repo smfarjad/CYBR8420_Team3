@@ -20,7 +20,7 @@ https://github.com/users/smfarjad/projects/3
 Salt
 
 **Repository Link:**
-https://github.com/saltstack/salt
+[github.com/saltstack/salt](https://github.com/saltstack/salt)
 
 ---
 
@@ -58,7 +58,7 @@ We chose Salt for the project because it offers a rich setting in which to explo
 - **Use & Popularity**:  Salt is widely used in industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. It is considered one of the mature tools alongside Puppet, Chef, Ansible. 
 - **Languages Used**: Primarily Python. Configuration files/states are often written in YAML with support via templating (e.g. Jinja) etc. 
 - **Platform**: Salt runs on Unix-like systems (Linux, BSD), macOS, and Windows. It manages servers, containers, virtual machines, databases, network devices, etc. 
-- **Documentation Sources**: docs.saltproject.io
+- **Documentation Sources**: [docs.saltproject.io](https://docs.saltproject.io)
 
 **Additional Project Statistics:**
 
