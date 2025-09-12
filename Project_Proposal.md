@@ -17,10 +17,10 @@ https://github.com/users/smfarjad/projects/3
 ### **2. Open-Source Software Selection**
 
 **Software Name:**
-Adversarial Robustness Toolbox (ART) v1.20
+Salt
 
 **Repository Link:**
-https://github.com/Trusted-AI/adversarial-robustness-toolbox
+https://github.com/saltstack/salt
 
 ---
 
@@ -49,16 +49,29 @@ https://github.com/Trusted-AI/adversarial-robustness-toolbox
 ### **4. Project Motivation & Description**
 
 **Team Motivation for Selection:**
-[Explain why your team chose this specific project. This could be due to personal interest, its relevance to a current technology trend, or the clear security challenges it presents.]
+We chose Salt for the project because it offers a rich setting in which to explore software assurance: it’s relevant to current trends in infrastructure automation and DevOps, poses clear challenges around security, consistency, and reliability, and gives us opportunities for hands-on work with real tools used in production environments.
 
 **Open-Source Project Description:**
-- **What is it?**: [A brief description of the software's purpose.]
-- **Contributors**: [Number of contributors and a note on community activity.]
-- **Activity**: [General level of activity, e.g., number of commits per week, frequency of new releases.]
-- **Use & Popularity**: [Briefly describe the software's user base and popularity.]
-- **Languages Used**: [List the primary programming languages used in the project.]
-- **Platform**: [On which platforms does the software run? E.g., Web, desktop, mobile.]
-- **Documentation Sources**: [List where you found project documentation, e.g., README.md, official website, wiki.]
+- **What is it?**: Salt (also known as SaltStack) is an event-driven automation and configuration management framework. It is used to deploy, configure, and manage complex IT systems, ensuring that all components maintain a consistent desired state.
+- **Contributors**: The project has more than 3,000 contributors in its community.  [Number of contributors and a note on community activity.]
+- **Activity**: Releases are made frequently; feature releases occur every 4-6 weeks with subsequent bugfix or maintenance releases. There is substantial ongoing community maintenance, active issue tracking, and contributions via pull requests. 
+- **Use & Popularity**:  Salt is widely used in industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. It is considered one of the mature tools alongside Puppet, Chef, Ansible. 
+- **Languages Used**: Primarily Python. Configuration files/states are often written in YAML with support via templating (e.g. Jinja) etc. [List the primary programming languages used in the project.]
+- **Platform**: Salt runs on Unix-like systems (Linux, BSD), macOS, and Windows. It manages servers, containers, virtual machines, databases, network devices, etc. 
+- **Documentation Sources**: docs.saltproject.io
+
+**Additional Project Statistics:**
+
+- **Number of contributors:** Salt has more than 3,000 contributors to its GitHub repository. 
+GitHub
+
+- **Total commits:** The repository has over 108,300 commits on the main Salt repo. 
+docs.saltproject.io
+
+- **Open issues:** As of early September 2025, there are thousands of open issues—e.g. issues numbered in the 68,000s (e.g. #68311, #68308, etc.). 
+GitHub
+
+- **Recent activity:** Salt continues to have regular bug reports and pull requests. It also had a recent Long Term Support (LTS) release (v3006.10) in March 2025.
 
 ---
 
