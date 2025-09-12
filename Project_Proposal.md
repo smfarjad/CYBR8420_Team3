@@ -20,7 +20,7 @@ https://github.com/users/smfarjad/projects/3
 Salt
 
 **Repository Link:**
-[github.com/saltstack/salt](https://github.com/saltstack/salt)
+https://github.com/saltstack/salt
 
 ---
 
