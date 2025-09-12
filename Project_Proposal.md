@@ -62,14 +62,11 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 **Additional Project Statistics:**
 
-- **Number of contributors:** Salt has more than 3,000 contributors to its GitHub repository. 
-GitHub
+- **Number of contributors:** Salt has more than 3,000 contributors to its GitHub repository.
 
-- **Total commits:** The repository has over 108,300 commits on the main Salt repo. 
-docs.saltproject.io
+- **Total commits:** The repository has over 108,300 commits on the main Salt repository. 
 
-- **Open issues:** As of early September 2025, there are thousands of open issues—e.g. issues numbered in the 68,000s (e.g. #68311, #68308, etc.). 
-GitHub
+- **Open issues:** As of early September 2025, there are thousands of open issues—e.g. issues numbered in the 68,000s (e.g. #68311, #68308, etc.).
 
 - **Recent activity:** Salt continues to have regular bug reports and pull requests. It also had a recent Long Term Support (LTS) release (v3006.10) in March 2025.
 
