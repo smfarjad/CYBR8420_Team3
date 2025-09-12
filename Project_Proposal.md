@@ -53,10 +53,10 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 **Open-Source Project Description:**
 - **What is it?**: Salt (also known as SaltStack) is an event-driven automation and configuration management framework. It is used to deploy, configure, and manage complex IT systems, ensuring that all components maintain a consistent desired state.
-- **Contributors**: The project has more than 3,000 contributors in its community.  [Number of contributors and a note on community activity.]
-- **Activity**: Releases are made frequently; feature releases occur every 4-6 weeks with subsequent bugfix or maintenance releases. There is substantial ongoing community maintenance, active issue tracking, and contributions via pull requests. 
+- **Contributors**: The project has more than 3,000 contributors in its community. Releases are made frequently; feature releases occur every 4-6 weeks with subsequent bugfix or maintenance releases.
+- **Activity**: There is substantial ongoing community maintenance, active issue tracking, and contributions via pull requests. 
 - **Use & Popularity**:  Salt is widely used in industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. It is considered one of the mature tools alongside Puppet, Chef, Ansible. 
-- **Languages Used**: Primarily Python. Configuration files/states are often written in YAML with support via templating (e.g. Jinja) etc. [List the primary programming languages used in the project.]
+- **Languages Used**: Primarily Python. Configuration files/states are often written in YAML with support via templating (e.g. Jinja) etc. 
 - **Platform**: Salt runs on Unix-like systems (Linux, BSD), macOS, and Windows. It manages servers, containers, virtual machines, databases, network devices, etc. 
 - **Documentation Sources**: docs.saltproject.io
 
