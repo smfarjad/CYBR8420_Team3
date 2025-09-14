@@ -86,28 +86,37 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 **Security-Related History:**
 
-The Adversarial Robustness Toolbox (ART) has had a few security-related vulnerabilities. The vulnerabilities were tied to external dependencies rather than its own codebase.  
+Saltstack has experienced a number of security-related vulnerabilities over the years, this includes:
 
-**CVE-2021-28678**  
+**CVE-2020-11651** 
 
--Affected ART versions prior to 1.6.1 due to a vulnerable Pillow dependency 
+- Salt-master process ClearFuncs did not properly validate method calls 
 
--Fixed in version 1.6.1, updated to a secure version  
+- Allowed remote users to access methods without authentication 
 
-**CVE-2021-34552**  
+- Saltstack released patches 3000.2, 2019.2.4 
 
--Also linked to Pillow 
+**CVE-2020-11652** 
 
--Remediated in version 1.7.1, updated to a secure version 
+- Allowed attackers to read/change files on the Salt master without logging in 
 
-**CVE-2021-23437** 
+- Saltstack released patches 3000.2, 2019.2.4 
 
--Dependency flaws linked to Pillow
+**CVE-2022-22967** 
 
--Resolved in version 1.8.0, updated to a secure version 
+- Discovered in Salstack Salt in versions before 3002.9, 3003.5, 3004.2 
 
-The latest version 1.19.1 (January 22, 2025) has no known security vulnerabilities.  
+- PAM authentication failed to block locked users 
 
+- Resolved the issues in those versions 
+
+**CVE-2022-22936** 
+
+- Discovered in Salstack Salt in versions before 3002.8, 3003.4, 3004.1 
+
+- Replay attack vulnerability, allowed attackers to resend old job messages, potentially gaining root access 
+
+- Resolved the issues in those versions 
 
 
 **Team Reflection:**
