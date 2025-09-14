@@ -135,8 +135,8 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
 ***Joe Nguyen***
-- **What did you learn?**: [Your personal learning experience from this assignment.]
-- **What did you find most useful?**: [The most valuable part of the process for you.]
+
+This is my first time being a part of a technical team and I learned quite a lot from the experience. At first it was very overwhelming- having to find a meeting time that worked for everyone, distributing the work, and coming up with a project. Even though this was just a project proposal, I can already see how technically complex and detailed these kinds of projects can be. One issue that we ran into was during our meeting with Dr. Gandhi. He mentioned that our original project idea would not work well. This did set us back a bit, as some team members had already started working on their parts, and we had to meet again to brainstorm a new project idea. However, we were able to communicate effectively and quickly align on a new project. What I found most useful was the regular communication within the team. Keeping each other updated helped us stay on track, adjust when needed and avoid misunderstandings.     
 
 ***John Winchester***
 - **What did you learn?**: [Your personal learning experience from this assignment.]
