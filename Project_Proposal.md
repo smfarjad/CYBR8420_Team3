@@ -82,7 +82,9 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 ---
 
-### **6. Security History **
+
+### **6. Security History**
+
 
 **Security-Related History:**
 
