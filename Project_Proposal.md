@@ -82,7 +82,7 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 ---
 
-### **6. Security History & Team Reflection**
+### **6. Security History **
 
 **Security-Related History:**
 
@@ -119,7 +119,7 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 - Resolved the issues in those versions 
 
 
-**Team Reflection:**
+### **7. Team Reflection**
 
 
 ***Mohammed Alfawzan***
