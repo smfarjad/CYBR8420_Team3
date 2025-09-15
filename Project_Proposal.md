@@ -39,10 +39,20 @@ https://github.com/saltstack/salt
 - **Threat 3:** Data tampering.]
 
 **Security Features:**
-[List the security features you have identified in the software. For example:
-- **Feature 1:** End-to-end encryption for all data.
-- **Feature 2:** Role-based access control.
-- **Feature 3:** Secure password hashing and storage.]
+
+AES Encryption- Encrpyts communication between master and minions  
+
+External Authentication- Allows login via PAM, GitHub, etc., for user-based access 
+
+Encrypted Pillars- Stores sensitive data in encrypted form   
+
+Job Logging and Auditing- Tracks who ran what command, where they ran it, and when 
+
+PKI Authentication- Uses public/private keys to authenticate minions to the master 
+
+Minion Blacklist/Whitelist- Blocks unauthorized minions from connecting 
+
+Role-Based Access Control- Limits what users can do based on roles and permissions 
 
 ---
 
