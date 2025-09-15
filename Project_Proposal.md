@@ -120,6 +120,10 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 
 - Resolved the issues in those versions 
 
+-Engineering & process. The project publishes security advisories, supports private vulnerability reporting, and since 3006 follows an LTS/STS release cadence to deliver fixes predictably.
+
+-Bottom line. Strong security primitives but a broad attack surface avoid exposing masters to the internet, enable TLS/eAuth, disable auto-accept, and patch promptly.
+
 
 ### **7. Team Reflection**
 
