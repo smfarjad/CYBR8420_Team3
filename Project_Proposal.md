@@ -98,11 +98,10 @@ We chose Salt for the project because it offers a rich setting in which to explo
 ### **5. License & Contribution Procedures**
 
 **Software License:**
-[Identify the open-source license (e.g., MIT, GPLv3). Provide a brief summary of what the license permits or restricts.]
+**License:** Apache 2.0
 
-**Contribution Procedures & Contributor Agreements:**
-[Describe the process for making a contribution to the project. Mention if a Contributor License Agreement (CLA) is required and how a new developer would submit a pull request.]
-
+**Security Policy:**
+SECURITY.md file; public security announcement channel. 
 ---
 
 
@@ -147,6 +146,7 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 
 -Bottom line: Strong security primitives but a broad attack surface avoid exposing masters to the internet, enable TLS/eAuth, disable auto-accept, and patch promptly.
 
+-Known CVE for Saltstack Salt  https://nvd.nist.gov/vuln/detail/CVE-2020-11651  
 
 ### **7. Team Reflection**
 
