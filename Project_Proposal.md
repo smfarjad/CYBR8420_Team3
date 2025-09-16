@@ -47,7 +47,8 @@ For this operational environment, the perceived threats are as follows:
 3. Malicious state or execution modules (supply-chain or plugin).  
 4. Misconfiguration leading to privilege escalation.  
 5. DoS or overload from too many events or nodes.  
-6. Configuration drift or divergence.  
+6. Configuration drift or divergence.
+7. Data tampering  
 
 **Security Features:**  
 ![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
