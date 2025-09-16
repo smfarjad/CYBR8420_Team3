@@ -29,6 +29,8 @@ https://github.com/saltstack/salt
 **Operational Environment Description:**
 [Describe a hypothetical setting, such as a home, office, or enterprise, where the software would be used. Detail the type of users, the kind of data they handle, and the software's role in this environment.]
 
+An operational environment for SaltStack would be in an enterprise environment where the System Administrators manage/deploy the regular users' systems, ensuring that all components maintain a consistent desired state within the ecosystem. 
+
 **Systems Engineering View Diagram:**
 [Insert a link to or embed an image of your systems engineering diagram here. The diagram should visually represent the software in its operational environment, showing its interactions with users and other systems.]
 
