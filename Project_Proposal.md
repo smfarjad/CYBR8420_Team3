@@ -162,8 +162,7 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 - **What did you find most useful?**: [The most valuable part of the process for you.]
 
 ***Tyler McCoid***
-- **What did you learn?**: [Your personal learning experience from this assignment.]
-- **What did you find most useful?**: [The most valuable part of the process for you.]
+For this assignment, I didn’t anticipate the sheer number of different open-source projects that are being worked on in the community and many of the larger ones are actively being supported by large corporations. With this assignment, I learned that communication is key for coordinating with who is working on what and the timeline for when things need to be done. The most useful point that I learned from this assignment is that having a good communication channel to the rest of the team makes everything run a lot smoother.  
 
 ***Joe Nguyen***
 
