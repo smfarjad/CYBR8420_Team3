@@ -64,7 +64,7 @@ Minion Blacklist/Whitelist- Blocks unauthorized minions from connecting
 
 Role-Based Access Control- Limits what users can do based on roles and permissions 
 
-### Other Security Features
+### Security Features Documentation
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/security.html#
 
 ---
