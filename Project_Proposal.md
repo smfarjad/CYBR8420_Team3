@@ -45,21 +45,14 @@ For this operational environment, the perceived threats are as follows:
 **Security Features:**  
 Following are the key security features, which are used by Salt, these security features enable safe operations of the system.
 
-
 - **Encrypted Communication:** Salt uses AES for encrypting the communication channel between central control server (i.e., master) and its connected nodes (i.e., minions). Besides communication, it uses encryptiion  
-
 - **External Authentication:** For providing external authnetication, salt allows login via PAM, GitHub, etc., for user-based access. 
-
 - **Encrypted Pillars:** The senstive data is stored in in encrypted form.   
-
 - **Job Logging and Auditing:** The logging is ensured for tracking the history and details of the commands used by the users.
-
 - **PKI Authentication:** Salt uses public/private keys to authenticate minions to the master. 
-
 - **Minion Blacklist/Whitelist:**  Salt also maintains list for blocking unauthorized minions from connecting the master. 
-
 - **Role-Based Access Control:** The users are constrained by permissions pertinent to their assigned roles.
-- 
+
 ![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
 
 
