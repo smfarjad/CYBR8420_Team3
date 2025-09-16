@@ -27,7 +27,7 @@ https://github.com/saltstack/salt
 ### **3. Hypothetical Operational Environment & Security Analysis**
 
 **Operational Environment Description:**  
-SaltStack can hypothetically operate in enterprise environments with hybrid cloud and on-premise infrastructure, where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures.
+Salt can hypothetically operate in enterprise environments with hybrid cloud and on-premise infrastructure, where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures.
 
 **Systems Engineering View Diagram:**
 ![System Engineering Diagram](images/Saltinsystemengineeringdiag.drawio.png)
@@ -44,7 +44,7 @@ For this operational environment, the perceived threats are as follows:
 
 **Security Features:**  
 Following are the key security features, which are used by Salt, these security features enable safe operations of the system.
-![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
+
 
 - **Encrypted Communication:** Salt uses AES for encrypting the communication channel between central control server (i.e., master) and its connected nodes (i.e., minions). Besides communication, it uses encryptiion  
 
@@ -59,6 +59,9 @@ Following are the key security features, which are used by Salt, these security 
 - **Minion Blacklist/Whitelist:**  Salt also maintains list for blocking unauthorized minions from connecting the master. 
 
 - **Role-Based Access Control:** The users are constrained by permissions pertinent to their assigned roles.
+- 
+![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
+
 
 ### Security Features Documentation
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/security.html#
@@ -68,26 +71,24 @@ https://docs.saltproject.io/salt/user-guide/en/latest/topics/security.html#
 ### **4. Project Motivation & Description**
 
 **Team Motivation for Selection:**
-We chose Salt for the project because it offers a rich setting in which to explore software assurance: it’s relevant to current trends in infrastructure automation and DevOps, poses clear challenges around security, consistency, and reliability, and gives us opportunities for hands-on work with real tools used in production environments.
+We chose Salt for the project because it offers a rich setting in which to explore software assurance: a) it is relevant to current trends in infrastructure automation and DevOps; b) it poses clear challenges around security, consistency, and reliability; and c) it provides opportunities for hands-on work with tools used in production environments. Another key factor in our selection was the programming language of the codebase. Since our entire team is already familiar with Python, projects with a Python codebase were a high priority.
 
-**Open-Source Project Description:**
-- **What is it?**: Salt (also known as SaltStack) is an event-driven automation and configuration management framework. It is used to deploy, configure, and manage complex IT systems, ensuring that all components maintain a consistent desired state.
-- **Contributors**: The project has more than 3,000 contributors in its community. Releases are made frequently; feature releases occur every 4-6 weeks with subsequent bugfix or maintenance releases.
-- **Activity**: There is substantial ongoing community maintenance, active issue tracking, and contributions via pull requests. 
-- **Use & Popularity**:  Salt is widely used in industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. It is considered one of the mature tools alongside Puppet, Chef, Ansible. 
-- **Languages Used**: Primarily Python. Configuration files/states are often written in YAML with support via templating (e.g. Jinja) etc. 
-- **Platform**: Salt runs on Unix-like systems (Linux, BSD), macOS, and Windows. It manages servers, containers, virtual machines, databases, network devices, etc. 
-- **Documentation Sources**: [docs.saltproject.io](https://docs.saltproject.io)
+
+**Project Description:**
+* **What is it?**: Salt (also known as SaltStack) is an event-driven automation and configuration management framework. It is used to deploy, configure, and manage complex IT systems, ensuring that all components maintain a consistent, desired state.
+* **Contributors**: The project has over 3,000 community contributors. Major feature releases occur every 4-6 weeks, followed by subsequent bugfix and maintenance releases.
+* **Activity**: The project has substantial ongoing community maintenance, active issue tracking, and consistent contributions via pull requests.
+* **Use & Popularity**: Salt is widely used in the industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. Alongside Puppet, Chef, and Ansible, it is considered one of the most mature tools in its field.
+* **Languages Used**: The codebase is written primarily in Python. Configuration states are typically written in YAML and can be extended with templating engines like Jinja.
+* **Platform**: Salt runs on Unix-like systems (Linux, BSD), macOS, and Windows. It can manage a wide range of components, including servers, containers, virtual machines, databases, and network devices.
+* **Documentation Sources**: [docs.saltproject.io](https://docs.saltproject.io)
 
 **Additional Project Statistics:**
 
-- **Number of contributors:** Salt has more than 3,000 contributors to its GitHub repository.
-
-- **Total commits:** The repository has over 108,300 commits on the main Salt repository. 
-
-- **Open issues:** As of early September 2025, there are thousands of open issues—e.g. issues numbered in the 68,000s (e.g. #68311, #68308, etc.).
-
-- **Recent activity:** Salt continues to have regular bug reports and pull requests. It also had a recent Long Term Support (LTS) release (v3006.10) in March 2025.
+- **Contributors:** With over 3,000 contributors on GitHub, Salt has a large and active developer community.
+- **Commits:** The main repository has accumulated over 108,300 commits, reflecting a long history of continuous development.
+- **Open Issues:** There are thousands of open issues (e.g., issues numbered in the 68,000s), which indicates a high level of user engagement and ongoing bug discovery.
+- **Recent Activity:** Development remains active, with regular bug reports and pull requests. The project also had a recent Long-Term Support (LTS) release, v3006.10, in March 2025, which underscores its continued maintenance and stability.
 
 ---
 
