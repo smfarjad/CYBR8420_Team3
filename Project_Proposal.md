@@ -27,7 +27,7 @@ https://github.com/saltstack/salt
 ### **3. Hypothetical Operational Environment & Security Analysis**
 
 **Operational Environment Description:**  
-Salt can hypothetically operate in enterprise environments with hybrid cloud and on-premise infrastructure, where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures.
+Salt can hypothetically operate in enterprise environments with hybrid cloud and on-premise infrastructure (e.g., edge computing environments), where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures. The nodes are referred to as minions and are managed by a central server(s) called the master.
 
 **Systems Engineering View Diagram:**
 ![System Engineering Diagram](images/SystemEnggDiagram.svg)
