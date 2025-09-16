@@ -30,7 +30,6 @@ https://github.com/saltstack/salt
 SaltStack can hypothetically operate in enterprise environments with hybrid cloud and on-premise infrastructure, where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures.
 
 **Systems Engineering View Diagram:**
-[Insert a link to or embed an image of your systems engineering diagram here. The diagram should visually represent the software in its operational environment, showing its interactions with users and other systems.]
 ![System Engineering Diagram](images/Saltinsystemengineeringdiag.drawio.png)
 
 **Threats:**  
@@ -169,8 +168,7 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 I learned how to read a large open source project and turn dense docs into clear, accurate text. Owning the License and Contribution Procedures section pushed me to understand Apache 2.0 in practical terms, the normal contribution flow for Salt from fork and branch to running pre commit and nox and opening a pull request, how security issues are reported privately before advisories, and why the LTS and STS release rhythm matters for patching. I also got better at connecting a systems view and threat model to real CVEs and at keeping work organized with a GitHub project board that links issues and reviews. The most useful part was the fast review loops with the team, which tightened my writing and made the whole process move smoothly.
 
 ***Sheikh Muhammad Farjad***
-- **What did you learn?**: It was a little bit exhausting but a fun experience to go through an active and large codebase wearing a hat different from the end users. This my first experience doing this especially with a project that is a part of commercial system (i.e., VMware). I learnt how commercial systems manages and supports the development of an open source project.
-- **What did you find most useful?**: While the documentation of the project is quite descriptive, another aspect which i found useful was external documentation and tutorial regarding the project and its usability. This type of external supports, I think, improves the usability of the project.
+It was a little bit exhausting but a fun experience to go through an active and large codebase wearing a hat different from the end users. This my first experience doing this especially with a project that is a part of commercial system (i.e., VMware). I learnt how commercial systems manages and supports the development of an open source project. While the documentation of the project is quite descriptive, another aspect which i found useful was external documentation and tutorial regarding the project and its usability. This type of external supports, I think, improves the usability of the project.
 
 ***Tyler McCoid***  
 For this assignment, I didn’t anticipate the sheer number of different open-source projects that are being worked on in the community and many of the larger ones are actively being supported by large corporations. With this assignment, I learned that communication is key for coordinating with who is working on what and the timeline for when things need to be done. The most useful point that I learned from this assignment is that having a good communication channel to the rest of the team makes everything run a lot smoother.  
