@@ -98,10 +98,9 @@ We chose Salt for the project because it offers a rich setting in which to explo
 ### **5. License & Contribution Procedures**
 
 **Software License:**
-**License:** Apache 2.0
+**License:** Apache 2.0  
+**Security Policy:** SECURITY.md file: public security announcement channel.
 
-**Security Policy:**
-SECURITY.md file; public security announcement channel. 
 ---
 
 
