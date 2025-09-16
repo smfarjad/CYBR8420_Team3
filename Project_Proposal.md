@@ -31,7 +31,7 @@ SaltStack can hypothetically operate in enterprise environments with hybrid clou
 
 **Systems Engineering View Diagram:**
 [Insert a link to or embed an image of your systems engineering diagram here. The diagram should visually represent the software in its operational environment, showing its interactions with users and other systems.]
-![The San Juan Mountains are beautiful!]()
+![System Engineering Diagram](images/SaltSystemsEngineeringView.png)
 
 **Threats:**  
 For this operational environment, the perceived threats are as follows:
