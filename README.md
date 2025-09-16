@@ -53,8 +53,14 @@
 ---
 
 ## Security Features in Salt
-
-
+![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
+- When a minion checks into the master it sends its public key to the master and the master checks if the key has been accepted.
+- The minion will attempt to re-authenticate every 30 seconds until it’s key is accepted.
+- If accepted then the master will accept the minion and allow it to accept commands.
+- After the keys are sent to the master then the master will need to accept them. This acceptance is done with the salt-key command. Salt keys are used in the following ways:
+- RSA keys are used for authentication
+- An AES key is used for encryption
+  - The AES key is changed every 24 hours by default, or when a minion is deleted.
 
 ---
 
