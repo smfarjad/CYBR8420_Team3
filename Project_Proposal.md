@@ -47,7 +47,7 @@ An operational environment for SaltStack would be in an enterprise environment w
 5. DoS or overload from too many events or nodes.  
 6. Configuration drift or divergence.  
 
-**Security Features:**
+**Security Features:**  
 ![alt text](https://github.com/smfarjad/CYBR8420_Team3/blob/main/images/key-management.png)
 
 AES Encryption- Encrpyts communication between master and minions  
