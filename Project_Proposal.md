@@ -1,6 +1,6 @@
 # Project Proposal: Team 3
 
-This document outlines our team's proposal for the project, focusing on the security analysis of a chosen open-source software.
+This document outlines our team's proposal for the project, focusing on the security analysis of a chosen open-source project.
 
 ---
 
@@ -110,48 +110,31 @@ Private vulnerability disclosures are accepted at saltproject-security.pdl@broad
 
 ---
 
-
 ### **6. Security History**
 
-
 **Security-Related History:**
-
 Saltstack has experienced a number of security-related vulnerabilities over the years, this includes:
 
 **CVE-2020-11651** 
-
 - Salt-master process ClearFuncs did not properly validate method calls 
-
 - Allowed remote users to access methods without authentication 
-
 - Saltstack released patches 3000.2, 2019.2.4 
 
 **CVE-2020-11652** 
-
 - Allowed attackers to read/change files on the Salt master without logging in 
-
 - Saltstack released patches 3000.2, 2019.2.4 
 
 **CVE-2022-22967** 
-
 - Discovered in Salstack Salt in versions before 3002.9, 3003.5, 3004.2 
-
 - PAM authentication failed to block locked users 
-
 - Resolved the issues in those versions 
 
 **CVE-2022-22936** 
-
 - Discovered in Salstack Salt in versions before 3002.8, 3003.4, 3004.1 
-
 - Replay attack vulnerability, allowed attackers to resend old job messages, potentially gaining root access 
-
 - Resolved the issues in those versions 
-
 -Engineering & process: The project publishes security advisories, supports private vulnerability reporting, and since 3006 follows an LTS/STS release cadence to deliver fixes predictably.
-
 -Bottom line: Strong security primitives but a broad attack surface avoid exposing masters to the internet, enable TLS/eAuth, disable auto-accept, and patch promptly.
-
 -Known CVE for Saltstack Salt  https://nvd.nist.gov/vuln/detail/CVE-2020-11651  
 
 ### **7. Team Reflection**
@@ -162,7 +145,8 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 I learned how to read a large open source project and turn dense docs into clear, accurate text. Owning the License and Contribution Procedures section pushed me to understand Apache 2.0 in practical terms, the normal contribution flow for Salt from fork and branch to running pre commit and nox and opening a pull request, how security issues are reported privately before advisories, and why the LTS and STS release rhythm matters for patching. I also got better at connecting a systems view and threat model to real CVEs and at keeping work organized with a GitHub project board that links issues and reviews. The most useful part was the fast review loops with the team, which tightened my writing and made the whole process move smoothly.
 
 ***Sheikh Muhammad Farjad***
-It was a little bit exhausting but a fun experience to go through an active and large codebase wearing a hat different from the end users. This my first experience doing this especially with a project that is a part of commercial system (i.e., VMware). I learnt how commercial systems manages and supports the development of an open source project. While the documentation of the project is quite descriptive, another aspect which i found useful was external documentation and tutorial regarding the project and its usability. This type of external supports, I think, improves the usability of the project.
+
+Going through a large, active codebase was a bit exhausting but a very fun experience. This was my first time doing something like this, especially with a project that's part of a commercial system like VMware. I learned a lot about how commercial systems manage and support the development of open-source projects. While the project's own documentation was very descriptive, I also found external documentation and tutorials to be extremely useful. This type of external support, I believe, really improves a project's usability. Beyond that, I also reflected on the process of collaborating with teammates. I realized how important it is to have clear communication channels and shared interest.
 
 ***Tyler McCoid***  
 For this assignment, I didn’t anticipate the sheer number of different open-source projects that are being worked on in the community and many of the larger ones are actively being supported by large corporations. With this assignment, I learned that communication is key for coordinating with who is working on what and the timeline for when things need to be done. The most useful point that I learned from this assignment is that having a good communication channel to the rest of the team makes everything run a lot smoother.  
