@@ -174,4 +174,4 @@ This is my first time being a part of a technical team and I learned quite a lot
 
 ***John Winchester***
 - **What did you learn?**: Draw.IO is a infuriating program. 
-- **What did you find most useful?**: Github projects, and in voice communication. From a software 
+- **What did you find most useful?**: Github projects, and in voice communication. From a software security perspective, the extensive documentation and open source transparency is quite useful.
