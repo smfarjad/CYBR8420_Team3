@@ -29,6 +29,8 @@ https://github.com/saltstack/salt
 **Operational Environment Description:**
 [Describe a hypothetical setting, such as a home, office, or enterprise, where the software would be used. Detail the type of users, the kind of data they handle, and the software's role in this environment.]
 
+SaltStack operates in enterprise environments with hybrid cloud and on-premise infrastructure, where system administrators, DevOps, security, and infrastructure teams manage hundreds to thousands of nodes (servers, VMs, network devices). It ensures consistent system states, enforces strict security policies (e.g., encryption, authorization, compliance), and maintains high uptime with recovery capabilities for network or node failures
+
 An operational environment for SaltStack would be in an enterprise environment where the System Administrators manage/deploy the regular users' systems, ensuring that all components maintain a consistent desired state within the ecosystem.
 
 - **Environment type:** Enterprise / large cloud + on-premise hybrid infrastructure  
