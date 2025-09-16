@@ -40,6 +40,13 @@ An operational environment for SaltStack would be in an enterprise environment w
 - **Threat 2:** Denial of service attacks against the application.
 - **Threat 3:** Data tampering.]
 
+1. Unauthorized access to master or minion; key compromise.  
+2. Eavesdropping or MITM attacks on the transport.  
+3. Malicious state or execution modules (supply-chain or plugin).  
+4. Misconfiguration leading to privilege escalation.  
+5. DoS or overload from too many events or nodes.  
+6. Configuration drift or divergence.  
+
 **Security Features:**
 
 AES Encryption- Encrpyts communication between master and minions  
