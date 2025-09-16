@@ -29,7 +29,13 @@ https://github.com/saltstack/salt
 **Operational Environment Description:**
 [Describe a hypothetical setting, such as a home, office, or enterprise, where the software would be used. Detail the type of users, the kind of data they handle, and the software's role in this environment.]
 
-An operational environment for SaltStack would be in an enterprise environment where the System Administrators manage/deploy the regular users' systems, ensuring that all components maintain a consistent desired state within the ecosystem. 
+An operational environment for SaltStack would be in an enterprise environment where the System Administrators manage/deploy the regular users' systems, ensuring that all components maintain a consistent desired state within the ecosystem.
+
+- **Environment type:** Enterprise / large cloud + on-premise hybrid infrastructure  
+- **Users / stakeholders:** System administrators, DevOps engineers, security team, infrastructure team  
+- **Scale:** Hundreds to thousands of managed nodes (servers, virtual machines, network devices)  
+- **Security constraints:** Strong internal security policies, compliance (e.g. internal audits), encrypted communications, strict authorization controls, supply chain integrity, etc.  
+- **Reliability & availability requirements:** Should have high uptime, ability to recover from network partitioning or node failures.  
 
 **Systems Engineering View Diagram:**
 [Insert a link to or embed an image of your systems engineering diagram here. The diagram should visually represent the software in its operational environment, showing its interactions with users and other systems.]
@@ -167,5 +173,5 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 This is my first time being a part of a technical team and I learned quite a lot from the experience. At first it was very overwhelming- having to find a meeting time that worked for everyone, distributing the work, and coming up with a project. Even though this was just a project proposal, I can already see how technically complex and detailed these kinds of projects can be. One issue that we ran into was during our meeting with Dr. Gandhi. He mentioned that our original project idea would not work well. This did set us back a bit, as some team members had already started working on their parts, and we had to meet again to brainstorm a new project idea. However, we were able to communicate effectively and quickly align on a new project. What I found most useful was the regular communication within the team. Keeping each other updated helped us stay on track, adjust when needed and avoid misunderstandings.     
 
 ***John Winchester***
-- **What did you learn?**: [Your personal learning experience from this assignment.]
-- **What did you find most useful?**: [The most valuable part of the process for you.]
+- **What did you learn?**: Draw.IO is a infuriating program. 
+- **What did you find most useful?**: Github projects, and in voice communication. From a software 
