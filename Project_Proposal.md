@@ -32,6 +32,8 @@ Salt can hypothetically operate in enterprise environments with hybrid cloud and
 **Systems Engineering View Diagram:**
 ![System Engineering Diagram](images/SystemEnggDiagram.jpg)
 
+
+![System Engineering Diagram2](images/SystemEnggDiagram.svg)
 **Threats:**  
 For this operational environment, the perceived threats are as follows:
 1. Unauthorized access to master or minion; key compromise.  
