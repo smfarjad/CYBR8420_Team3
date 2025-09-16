@@ -101,11 +101,11 @@ Software License: Apache License 2.0 (Apache-2.0).
 Permissive license allowing use, modification, and redistribution (including commercial). Conditions include retention of copyright/NOTICE and inclusion of the license text. The license provides an express patent grant and disclaims warranties; trademarks are not granted.
 
 Contribution procedures.
-•	Issue selection: Contributions typically start from issues labeled help wanted or good first issue in the repository.
-•	Branching model: Fork the repository and create a topic branch. Bug fixes target the oldest supported branch where the bug exists; new features and enhancements target master.
-•	Tooling & quality gates: Enable pre-commit hooks and run nox sessions locally; tests and documentation accompany changes when applicable.
-•	Pull requests: Submit a PR on GitHub and iterate based on reviewer feedback in accordance with the project’s Git/PR policy.
-•	Community standards: The Salt Project Code of Conduct applies to all participation.
+- •	Issue selection: Contributions typically start from issues labeled help wanted or good first issue in the repository.
+- •	Branching model: Fork the repository and create a topic branch. Bug fixes target the oldest supported branch where the bug exists; new features and enhancements target master.
+- •	Tooling & quality gates: Enable pre-commit hooks and run nox sessions locally; tests and documentation accompany changes when applicable.
+- •	Pull requests: Submit a PR on GitHub and iterate based on reviewer feedback in accordance with the project’s Git/PR policy.
+- •	Community standards: The Salt Project Code of Conduct applies to all participation.
 
 Contributor agreements (CLA/DCO).
 
