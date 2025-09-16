@@ -41,11 +41,7 @@ An operational environment for SaltStack would be in an enterprise environment w
 [Insert a link to or embed an image of your systems engineering diagram here. The diagram should visually represent the software in its operational environment, showing its interactions with users and other systems.]
 
 **Threats:**
-[List the perceived threats to the software in the described environment. Consider potential attackers, their motivations, and the vulnerabilities they might exploit. For example:
-- **Threat 1:** Unauthorized access to user data.
-- **Threat 2:** Denial of service attacks against the application.
-- **Threat 3:** Data tampering.]
-
+For this operational environment, the perceived threats are as follows:
 1. Unauthorized access to master or minion; key compromise.  
 2. Eavesdropping or MITM attacks on the transport.  
 3. Malicious state or execution modules (supply-chain or plugin).  
