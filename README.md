@@ -61,6 +61,9 @@
 - RSA keys are used for authentication
 - An AES key is used for encryption
   - The AES key is changed every 24 hours by default, or when a minion is deleted.
+ 
+### Other Security Features
+- https://docs.saltproject.io/salt/user-guide/en/latest/topics/security.html#
 
 ---
 
