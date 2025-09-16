@@ -164,6 +164,7 @@ Saltstack has experienced a number of security-related vulnerabilities over the 
 
 
 ***Mohammed Alfawzan***
+
 I learned how to read a large open source project and turn dense docs into clear, accurate text. Owning the License and Contribution Procedures section pushed me to understand Apache 2.0 in practical terms, the normal contribution flow for Salt from fork and branch to running pre commit and nox and opening a pull request, how security issues are reported privately before advisories, and why the LTS and STS release rhythm matters for patching. I also got better at connecting a systems view and threat model to real CVEs and at keeping work organized with a GitHub project board that links issues and reviews. The most useful part was the fast review loops with the team, which tightened my writing and made the whole process move smoothly.
 
 ***Sheikh Muhammad Farjad***
