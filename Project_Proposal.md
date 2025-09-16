@@ -78,9 +78,9 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 **Additional Project Statistics:**
 
-- **Contributors:** With over 3,000 contributors on GitHub, Salt has a large and active developer community.
-- **Commits:** The main repository has accumulated over 108,300 commits, reflecting a long history of continuous development.
-- **Open Issues:** There are thousands of open issues (e.g., issues numbered in the 68,000s), which indicates a high level of user engagement and ongoing bug discovery.
+- **Contributors:** With over 2,500 contributors on GitHub, Salt has a large and active developer community.
+- **Commits:** The main repository has accumulated over 123,000 commits, reflecting a long history of continuous development.
+- **Open Issues:** Currently, there are 2,239 open issues, which indicates a high level of user engagement and ongoing bug discovery.
 - **Recent Activity:** Development remains active, with regular bug reports and pull requests. The project also had a recent Long-Term Support (LTS) release, v3006.10, in March 2025, which underscores its continued maintenance and stability.
 
 ---
