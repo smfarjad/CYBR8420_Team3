@@ -69,7 +69,7 @@ We chose Salt for the project because it offers a rich setting in which to explo
 
 **Project Description:**
 * **What is it?**: Salt (also known as SaltStack) is an event-driven automation and configuration management framework. It is used to deploy, configure, and manage complex IT systems, ensuring that all components maintain a consistent, desired state.
-* **Contributors**: The project has over 3,000 community contributors. Major feature releases occur every 4-6 weeks, followed by subsequent bugfix and maintenance releases.
+* **Contributors**: The project has over 2,400 community contributors. Major feature releases occur every 4-6 weeks, followed by subsequent bugfix and maintenance releases.
 * **Activity**: The project has substantial ongoing community maintenance, active issue tracking, and consistent contributions via pull requests.
 * **Use & Popularity**: Salt is widely used in the industry for infrastructure management, configuration drift prevention, orchestration, and automating routine tasks. Alongside Puppet, Chef, and Ansible, it is considered one of the most mature tools in its field.
 * **Languages Used**: The codebase is written primarily in Python. Configuration states are typically written in YAML and can be extended with templating engines like Jinja.
@@ -79,7 +79,7 @@ We chose Salt for the project because it offers a rich setting in which to explo
 **Additional Project Statistics:**
 
 - **Contributors:** With over 2,500 contributors on GitHub, Salt has a large and active developer community.
-- **Commits:** The main repository has accumulated over 123,000 commits, reflecting a long history of continuous development.
+- **Commits:** The main repository has accumulated over 79,600 commits, reflecting a long history of continuous development.
 - **Open Issues:** Currently, there are 2,239 open issues, which indicates a high level of user engagement and ongoing bug discovery.
 - **Recent Activity:** Development remains active, with regular bug reports and pull requests. The project also had a recent Long-Term Support (LTS) release, v3006.10, in March 2025, which underscores its continued maintenance and stability.
 
