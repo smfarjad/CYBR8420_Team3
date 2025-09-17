@@ -81,6 +81,8 @@ We chose Salt for the project because it offers a rich setting in which to explo
 - **Open Issues:** Currently, there are 2,239 open issues, which indicates a high level of user engagement and ongoing bug discovery.
 - **Recent Activity:** Development remains active, with regular bug reports and pull requests. The project also had a recent Long-Term Support (LTS) release, v3006.10, in March 2025, which underscores its continued maintenance and stability.
 
+
+![Commits History](images/salt_commit.png)
 ---
 
 ### **5. License & Contribution Procedures**
