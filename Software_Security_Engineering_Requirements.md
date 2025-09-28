@@ -4,7 +4,7 @@
 
 ### 1.1 Use Case 1 - Manage Pillars (Contributor: Sheikh Muhammad Farjad)
 
-
+![Manage Pillars](./use_cases/Use-Misuse_Case-Farjad.svg)
 
 
 
