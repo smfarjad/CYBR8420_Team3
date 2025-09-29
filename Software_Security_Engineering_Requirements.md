@@ -76,11 +76,15 @@ Rationale: Prevents Unauthorized/Unstable Production Deployment from persisting 
 
 **2. Team Reflection**
 
-**Mohammed Alfawzan**
-**Sheikh Muhammad Farjad**
-**Tyler McCoid**
-**Joe Nguyen**
-**John Winchester**
+**Mohammed Alfawzan** : I learned that remote deploy isn’t just running a script it’s about who can deploy, what you trust, and how you prove it worked. The most useful part was the misuse→control loop: think like an attacker (unauthorized prod deploy, poisoned artifacts, fake checks) and then pin a concrete Salt control to it (eAuth/ACL, source_hash, tags, pillar.gpg, returners). That trace from threat → requirement → real feature made security feel practical, not theoretical.
+
+**Sheikh Muhammad Farjad** :
+
+**Tyler McCoid** :
+
+**Joe Nguyen**: 
+
+**John Winchester**: 
 
 
 
