@@ -56,7 +56,7 @@
 
 
 ### 1.5 Use Case 5 - distribute state file (Contributor: John Winchester)
-![Distributed State Files Misuse Case](use_cases/MisUseCaseV4.svg)
+![Distributed State Files Misuse Case](./use_cases/MisUseCasesV4greyovals.svg)
 
 
 
