@@ -30,16 +30,21 @@
 
 
 
-### 1.3 Use Case 3 - Your Use Case (Contributor: Mohammed Alfawzan)
+### 1.3 Use Case 3 - Remote Deployment (Contributor: Mohammed Alfawzan)
 
+![Remote Deployment](./use_cases/Remote_deployment.drawio (2).svg)
 
 
 
 
 
 **Derived Security Requirements:**
-- **SR-05:**
-- **SR-06:**
+- **SR-05:**  Artifact Encryption & Integrity Verification
+All artifacts and configuration pillars staged to targets must be stored encrypted at rest (via Salt’s GPG renderer or Vault integration) and verified with cryptographic digests/signatures at deployment time.
+Rationale: Prevents Artifact Poisoning by ensuring only authentic, untampered artifacts are applied
+- **SR-06:**  Deployment Verification & Rollback Trigger
+Every remote deployment must be followed by automated verification checks (service health, integrity tests). If verification fails, the system must automatically initiate Rollback & Remediation to the last-known-good state.
+Rationale: Prevents Unauthorized/Unstable Production Deployment from persisting by detecting issues immediately and restoring stability.
 
 
 
