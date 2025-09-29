@@ -18,7 +18,7 @@
 
 ### 1.2 Use Case 2 - Authentication/Authorization System (Contributor: Joe Nguyen)
 
-![Authentication/Authorization System](Assignment2.drawio.png)
+![Authentication/Authorization System](./use_cases/AuthorizationAuthentication.svg)
 
 
 
