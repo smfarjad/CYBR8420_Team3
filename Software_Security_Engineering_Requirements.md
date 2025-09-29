@@ -32,34 +32,27 @@
 
 ### 1.3 Use Case 3 - Remote Deployment (Contributor: Mohammed Alfawzan)
 
-![Remote Deployment](./use_cases/Remote_deployment.svg)
-
-
-
-
-
-
-**Derived Security Requirements:**
-- **SR-05:**  Artifact Encryption & Integrity Verification
-All artifacts and configuration pillars staged to targets must be stored encrypted at rest (via Salt’s GPG renderer or Vault integration) and verified with cryptographic digests/signatures at deployment time.
-Rationale: Prevents Artifact Poisoning by ensuring only authentic, untampered artifacts are applied
-- **SR-06:**  Deployment Verification & Rollback Trigger
-Every remote deployment must be followed by automated verification checks (service health, integrity tests). If verification fails, the system must automatically initiate Rollback & Remediation to the last-known-good state.
-Rationale: Prevents Unauthorized/Unstable Production Deployment from persisting by detecting issues immediately and restoring stability.
-
-
-
-
-### 1.4 Use Case 4 - Your Use Case (Contributor: Tyler McCoid)
-
 
 
 
 
 
 **Derived Security Requirements:**
-- **SR-07:** 
-- **SR-08:** 
+- **SR-05:** 
+- **SR-06:**  
+
+
+
+### 1.4 Use Case 4 - Minion Monitoring (Contributor: Tyler McCoid)
+
+![Minion Monitoring](./use_cases/Use-Misuse_Case.svg)
+
+
+
+
+**Derived Security Requirements:**
+- **SR-07:** The system shall use short-lived authentication to prevent bad actors from impersonating minions
+- **SR-08:** Once a Minion is authenticated, the system shall make a secure channel with encrypted communication between the two.
 
 
 ### 1.5 Use Case 5 - Your Use Case (Contributor: John Winchester)
@@ -76,7 +69,11 @@ Rationale: Prevents Unauthorized/Unstable Production Deployment from persisting 
 
 **2. Team Reflection**
 
-**Mohammed Alfawzan**
+
+**Mohammed Alfawzan** 
+
+
+I learned that remote deploy isn’t just running a script it’s about who can deploy, what you trust, and how you prove it worked. The most useful part was the misuse→control loop: think like an attacker (unauthorized prod deploy, poisoned artifacts, fake checks) and then pin a concrete Salt control to it (eAuth/ACL, source_hash, tags, pillar.gpg, returners). That trace from threat → requirement → real feature made security feel practical, not theoretical.
 
 
 **Sheikh Muhammad Farjad**
@@ -98,7 +95,6 @@ This project allowed me to effectively use Draw.io. At first, I did struggle a l
 
 
 
-
 # Assignment Part 2
 
 ### Sheikh Muhammad Farjad:
@@ -108,7 +104,7 @@ This project allowed me to effectively use Draw.io. At first, I did struggle a l
 
 Salt’s security-related configurations are often optional, hidden in subsections, or left to the system administrator’s discretion. Salt could benefit from adding a “What to do after installation” checklist. This checklist could include recommended defaults, change to short-lived tokens, enable logging, disable auto-accept keys, etc. Based on Salt’s website, the installation process is pretty straightforward and simple to follow. However, it might be in Salt’s best interest to add some sort of “Secure Installing” section because security hardening is not part of the main installation process- it is another subsection that you must find on their website. The installation process is beginner friendly, but the security aspect of installing Salt is buried in detail.   
 
-### Mohammed Alfawzan:
+### Mohammed Alfawzan: 
 
 
 ### Tyler McCoid:
