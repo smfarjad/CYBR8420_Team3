@@ -44,16 +44,16 @@
 
 
 
-### 1.4 Use Case 4 - Your Use Case (Contributor: Tyler McCoid)
+### 1.4 Use Case 4 - Minion Monitoring (Contributor: Tyler McCoid)
 
-
+![Minion Monitoring](./use_cases/Use-Misuse_Case.svg)
 
 
 
 
 **Derived Security Requirements:**
-- **SR-07:** 
-- **SR-08:** 
+- **SR-07:** The system shall use short-lived authentication to prevent bad actors from impersonating minions
+- **SR-08:** Once a Minion is authenticated, the system shall make a secure channel with encrypted communication between the two.
 
 
 ### 1.5 Use Case 5 - Your Use Case (Contributor: John Winchester)
@@ -72,7 +72,7 @@
 
 **Mohammed Alfawzan**
 **Sheikh Muhammad Farjad**
-**Tyler McCoid**
+**Tyler McCoid** 
 **Joe Nguyen**
 **John Winchester**
 
