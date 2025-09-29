@@ -16,9 +16,9 @@
 - **SR-02:** Blah blah blah
 
 
-### 1.2 Use Case 2 - Your Use Case (Contributor: Joe Nguyen)
+### 1.2 Use Case 2 - Authentication/Authorization System (Contributor: Joe Nguyen)
 
-
+![Authentication/Authorization System](Assignment2.drawio.png)
 
 
 
