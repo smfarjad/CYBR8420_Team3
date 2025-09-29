@@ -32,7 +32,8 @@
 
 ### 1.3 Use Case 3 - Remote Deployment (Contributor: Mohammed Alfawzan)
 
-![Remote Deployment](./use_cases/Remote_deployment.drawio (2).svg)
+![Remote Deployment](./use_cases/Remote_deployment.svg)
+
 
 
 
