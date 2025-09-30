@@ -58,16 +58,16 @@
 - **SR-08:** Once a Minion is authenticated, the system shall make a secure channel with encrypted communication between the two.
 
 
-### 1.5 Use Case 5 - Your Use Case (Contributor: John Winchester)
-
+### 1.5 Use Case 5 - distribute state file (Contributor: John Winchester)
+![Distributed State Files Misuse Case](./use_cases/MisUseCasesV4greyovals.svg)
 
 
 
 
 
 **Derived Security Requirements:**
-- **SR-09:** 
-- **SR-10:** 
+- **SR-09:** All state file changes must undergo formal Review of State Changes before distribution.
+- **SR-10:** Monitor/audit maintainer activity to detect compromise.  
 
 
 **2. Team Reflection**
@@ -80,7 +80,7 @@
 
 **Joe Nguyen**: 
 
-**John Winchester**: 
+**John Winchester**: I learned that there's quite a few different attack processes when dealing with changing a state file. This is so far pretty simplistic but it could end up looking quite complicated. Showing rounds in the loop shows the progression similar to our readings where one malicious attack may be nullified or mitigated for a new attack to present itself. Specific to Salt there's a bit more we could go into in terms of continuing this tree such as using Cryptographic signitures that could make a lot of this much more complicated for an attacker to pull off. 
 
 
 
