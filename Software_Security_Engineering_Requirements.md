@@ -89,7 +89,7 @@ While user documentation for Salt is detailed, partly due to the support from VM
 Salt’s security-related configurations are often optional, hidden in subsections, or left to the system administrator’s discretion. Salt could benefit from adding a “What to do after installation” checklist. This checklist could include recommended defaults, change to short-lived tokens, enable logging, disable auto-accept keys, etc. Based on Salt’s website, the installation process is pretty straightforward and simple to follow. However, it might be in Salt’s best interest to add some sort of “Secure Installing” section because security hardening is not part of the main installation process- it is another subsection that you must find on their website. The installation process is beginner friendly, but the security aspect of installing Salt is buried in detail.
 
 ### Mohammed Alfawzan: 
-
+Salt’s install docs are friendly, but the steps for a secure remote deployment are scattered and a few pieces are missing. I recommend one secure Remote Deploy page that people follow right after install. It should show how to limit who can deploy with external auth and publisher ACLs so only a release engineer can run orchestration in production, tell users to turn off auto_accept and open_mode and use TLS on the TCP transport, make file integrity a default by showing source_hash or signed files and suggest GitFS with tags only and app repos pinned to a commit, give a short secrets recipe using Pillar GPG or Vault with a reminder to avoid putting secrets in logs, and include a small canary then batch example that writes results to an external job store with a returner and rolls back on failed checks, plus a quick CI and CD snippet and a checklist linked from the install page so new users do not need to hunt around.
 
 ### Tyler McCoid:  
 While reviewing the security-related documentation, I discovered that many of the security features are often left optional. During the installation process, there is no main page that talks about the security settings of Salt in the installation documentation. The page that talks about the security is listed in the Salt User Guide. A recommendation that I have is to also include the security features that are used at the end of the install guide to make sure that the users understand what features should be enabled to provide the best security. 
@@ -100,9 +100,7 @@ While reviewing the security-related documentation, I discovered that many of th
 
 # Progress & Contribution Planning
 
-### Current Status: 
-We are analyzing all derived security requirements and individual reflections from Part 2 of the assignment.
+**Current Status:** We are analyzing all derived security requirements and individual reflections from Part 2 of the assignment.
 
-### Next Step: 
-Our immediate task is to prioritize a selection of security requirements and the identified gap from Part 2. This will allow us to narrow our focus to specific, high-impact areas of the Salt codebase, with the goal of producing actionable contributions to the original repository.
+**Next Step:** Our immediate task is to prioritize a selection of security requirements and the identified gap from Part 2. This will allow us to narrow our focus to specific, high-impact areas of the Salt codebase, with the goal of producing actionable contributions to the original repository.
 
