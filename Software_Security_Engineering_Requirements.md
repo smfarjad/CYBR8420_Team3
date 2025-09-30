@@ -101,9 +101,7 @@ While reviewing the security-related documentation, I discovered that many of th
 
 # Progress & Contribution Planning
 
-### Current Status: 
-We are analyzing all derived security requirements and individual reflections from Part 2 of the assignment.
+**Current Status**: We are analyzing all derived security requirements and individual reflections from Part 2 of the assignment.
 
-### Next Step: 
-Our immediate task is to prioritize a selection of security requirements and the identified gap from Part 2. This will allow us to narrow our focus to specific, high-impact areas of the Salt codebase, with the goal of producing actionable contributions to the original repository.
+**Next Step:** Our immediate task is to prioritize a selection of security requirements and the identified gap from Part 2. This will allow us to narrow our focus to specific, high-impact areas of the Salt codebase, with the goal of producing actionable contributions to the original repository.
 
