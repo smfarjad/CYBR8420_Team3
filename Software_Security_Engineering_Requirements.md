@@ -76,7 +76,7 @@
 
 **Sheikh Muhammad Farjad** :
 
-**Tyler McCoid** :
+**Tyler McCoid** : With this assignment, I got to learn more about how to use the features of Draw.io for creating diagrams. With this specific assignment, I also learned the importance of how use and misuse cases can be used for understanding the security requirements that a system needs. With understanding how a system will be used and the possibilities of how a bad actor will try to use the system, one can derive what defenses need to be put in place.  
 
 **Joe Nguyen**: 
 
@@ -97,7 +97,8 @@
 ### Mohammed Alfawzan: 
 
 
-### Tyler McCoid:
+### Tyler McCoid:  
+While reviewing the security-related documentation, I discovered that many of the security features are often left optional. During the installation process, there is no main page that talks about the security settings of Salt in the installation documentation. The page that talks about the security is listed in the Salt User Guide. A recommendation that I have is to also include the security features that are used at the end of the install guide to make sure that the users understand what features should be enabled to provide the best security. 
 
 
 ### John Winchester:
