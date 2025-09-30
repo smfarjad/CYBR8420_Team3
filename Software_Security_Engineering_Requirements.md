@@ -86,7 +86,7 @@
 # Assignment Part 2
 
 ### Sheikh Muhammad Farjad:
-
+While user documentation for Salt is detailed, partly due to the support from VMware, the security documentation and features have gaps that likely require community contributions. For example, I was surprised to learn there is no built-in at-rest encryption mechanism for pillar data. In practice, many teams use third-party utilities (e.g., [HashiCorp Vault](https://www.hashicorp.com/en/products/vault)) to encrypt pillar data. Otherwise, executing `pillar.items` (see [modules.pillar](https://docs.saltproject.io/en/3006/ref/modules/all/salt.modules.pillar.html)) reveals all pillar content in plaintext. This was especially surprising for a well-supported open-source tool like Salt.
 
 ### Joe Nguyen:
 
