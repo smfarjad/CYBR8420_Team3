@@ -4,16 +4,13 @@
 
 ### 1.1 Use Case 1 - Manage Pillars (Contributor: Sheikh Muhammad Farjad)
 
-![Manage Pillars](./use_cases/Use-Misuse_Case-Farjad.svg)
-
-
-
-
+![Manage Pillars](./use_cases/Use-Misuse_Case_Farjad.svg)
 
 
 **Derived Security Requirements:**
-- **SR-01:** Blah blah blah
-- **SR-02:** Blah blah blah
+- **SR-01:** All sensitive pillar data shall be stored only as encrypted blobs or as references to an approved secrets backend. The system shall reject any attempt to save plaintext secrets in repositories, caches, backups, or the Manage Pillar UI.
+- **SR-02:** Pillar data shall be encrypted at rest and in transit using modern cryptography such as AEAD ciphers like AES-256-GCM or XChaCha20-Poly1305 for storage and TLS 1.2 or 1.3 with PFS via ECDHE for distribution. Weak or legacy options shall be disabled and keys shall be generated with a CSPRNG and stored in a KMS or HSM.
+
 
 
 ### 1.2 Use Case 2 - Your Use Case (Contributor: Joe Nguyen)
@@ -74,7 +71,7 @@
 
 **Mohammed Alfawzan** : I learned that remote deploy isn’t just running a script it’s about who can deploy, what you trust, and how you prove it worked. The most useful part was the misuse→control loop: think like an attacker (unauthorized prod deploy, poisoned artifacts, fake checks) and then pin a concrete Salt control to it (eAuth/ACL, source_hash, tags, pillar.gpg, returners). That trace from threat → requirement → real feature made security feel practical, not theoretical.
 
-**Sheikh Muhammad Farjad** :
+**Sheikh Muhammad Farjad** : This assignment helped me in multiple dimensions. I learned how misuse-case analysis can lead directly to clear security requirements. I also practiced the grammar of writing requirements, especially using “shall” to state what the system must do. For collaboration, we used Git heavily and saw both its strengths and its limits. Pairing Git with an informal channel such as Discord proved more effective than using Git alone.
 
 **Tyler McCoid** : With this assignment, I got to learn more about how to use the features of Draw.io for creating diagrams. With this specific assignment, I also learned the importance of how use and misuse cases can be used for understanding the security requirements that a system needs. With understanding how a system will be used and the possibilities of how a bad actor will try to use the system, one can derive what defenses need to be put in place.  
 
