@@ -20,7 +20,7 @@ While Salt provides encryption, it is limited to communication channels involvin
 
 
 
-![Authentication/Authorization System](./use_cases/Use-MisuseJoe.svg)
+![Authentication/Authorization System](./use_cases/Use-Misuse_Case_Joe.svg)
 
 
 
@@ -35,7 +35,7 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 
 ### 1.3 Use Case 3 - Remote Deployment (Contributor: Mohammed Alfawzan)
 
-![Remote Deployment](./use_cases/Remote_deployment%20by%20Alfawzan%20.drawio.svg)
+![Remote Deployment](./use_cases/Use-Misuse_Case_Alfawzan.svg)
 
 
 
@@ -48,7 +48,7 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 
 ### 1.4 Use Case 4 - Minion Monitoring (Contributor: Tyler McCoid)
 
-![Minion Monitoring](./use_cases/Use-Misuse_Case_Tyler_Updated.drawio.svg)
+![Minion Monitoring](./use_cases/Use-Misuse_Case_Tyler.svg)
 
 
 
@@ -57,7 +57,7 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 - **SR-08:** Once a Minion is authenticated, the system shall make a secure channel with encrypted communication between the two.
 
 
-### 1.5 Use Case 5 - distribute state file (Contributor: John Winchester)
+### 1.5 Use Case 5 - Distribute State File (Contributor: John Winchester)
 ![Distributed State Files Misuse Case](./use_cases/Use_Misuse_case_John.svg)
 
 
