@@ -58,7 +58,7 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 
 
 ### 1.5 Use Case 5 - distribute state file (Contributor: John Winchester)
-![Distributed State Files Misuse Case](./use_cases/MisUseCasesV4greyovals.svg)
+![Distributed State Files Misuse Case](./use_cases/Use_Misuse_case_John.svg)
 
 
 
@@ -95,6 +95,7 @@ While reviewing the security-related documentation, I discovered that many of th
 
 
 ### John Winchester:
+Some aspects of the supply chain are under-explored in the Salt documentation, unless of course I'm not reading it correctly. The document's don't emphasis how to protect against Malicious state injections. Normally a push to a repository is gated by code review, however this also means that the team needs to be well versed in how to catch those potential malicious injections. This leaves openings for repository poisoning, and maintainer-account compromises that rely on experienced coders. Currently I'm not sure if Salt has the stronger perspective guidance on practices such as signed commits, repository verification, and communicated multi-party review reduces or eliminates the risk.  
 
 
 # Progress & Contribution Planning
