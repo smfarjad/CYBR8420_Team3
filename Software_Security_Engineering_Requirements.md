@@ -35,8 +35,6 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 
 ### 1.3 Use Case 3 - Remote Deployment (Contributor: Mohammed Alfawzan)
 
-![Remote Deployment (Misuse) — alfawzanxd](<./use_cases/Remote_deployment by Alfawzan .drawio.svg>)
-
 ![Remote Deployment](./use_cases/Remote_deployment%20by%20Alfawzan%20.drawio.svg)
 
 
