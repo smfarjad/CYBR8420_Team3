@@ -16,7 +16,7 @@ While Salt provides encryption, it is limited to communication channels involvin
 
 
 
-### 1.2 Use Case 2 - Your Use Case (Contributor: Joe Nguyen)
+### 1.2 Use Case 2 - Authorization/Authentication System (Contributor: Joe Nguyen)
 
 
 
