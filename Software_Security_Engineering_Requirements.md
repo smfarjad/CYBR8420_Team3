@@ -48,7 +48,7 @@ Salt provides the right primitive security tools (RSA key signing, short-lived t
 
 ### 1.4 Use Case 4 - Minion Monitoring (Contributor: Tyler McCoid)
 
-![Minion Monitoring](./use_cases/Use-Misuse_Case_Tyler.drawio.svg)
+![Minion Monitoring](./use_cases/Use-Misuse_Case_Tyler_Updated.drawio.svg)
 
 
 
