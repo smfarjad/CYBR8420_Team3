@@ -2,12 +2,14 @@
 
 
 ### **1. Top-Level Claim 1** 
-#### C1: 
-#### Contributor:
+#### C1: Salt minimizes the risk of unauthorized administrative access 
+#### Contributor: Joe Nguyen
 #### Assurance Case Diagram:
-
+![Claim 1](./images/AssuranceDiagramJoe.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
+“You are a software security engineer, and you need to suggest some rebuttals for the top claim “Salt minimizes the risk of unauthorized administrative access”. With the rebuttals you find, also include some evidence that could eliminate reason for doubt.” 
+
+This prompt was very useful in my opinion. It listed both rebuttals and evidence to eliminate doubt (even though AI provided very short/vague answers). However, AI did list ideas that I was able to build off of- definitely a great way to help frame the diagram. 
 
 
 ### **2. Top-Level Claim 2** 
