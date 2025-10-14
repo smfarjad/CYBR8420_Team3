@@ -80,6 +80,13 @@ Blah blah blah blah.
 ### Tyler McCoid
 #### Alignment of Evidence and Identified Gap:
 
+**Evidence either Available or Requiring Minimal Effort.**
+- **Evidence E1: Key rotation supported in code** Inside the documentation, key rotation is supported and is turned on by default. This key rotation happens daily.
+
+**Evidence Requiring Additional Effort.**
+
+
+
 #### Reflection:
 - **What did you learn from this assignment?**
 - **What did you find most useful?**
