@@ -114,8 +114,9 @@ This assignment helped me better understand how to evaluate and justify security
 #### Alignment of Evidence and Identified Gap:
 
 #### Reflection:
-- **What did you learn from this assignment?**
-- **What did you find most useful?**
+
+This assignment helped me turn vague security ideas into a clear assurance story. Writing an outcome focused claim made me think about what production must actually achieve, and the unless rebuttals pushed me to think like a skeptic and finish each branch with real evidence such as a job id log, a config snippet, or a short report. The most useful part was mapping our planned evidence to what Salt already provides versus what we must add, which exposed practical gaps like a release manifest and a path registry and gave me a concrete checklist for next steps.
+
 
 
 
