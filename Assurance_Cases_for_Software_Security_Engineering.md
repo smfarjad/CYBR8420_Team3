@@ -82,8 +82,8 @@ This assignment helped me better understand how to evaluate and justify security
 
 **Evidence either Available or Requiring Minimal Effort.** These items are generally available as static and standard artifacts within the Salt project repository and require primary manual review effort.
 
-- **E2.1.1.1 Source code management (SCM) audit logs:** These logs are standard artifacts produced by version control systems used in Salt development. The effort lies in the manual review to confirm the logs demonstrate the automated checks (C1.1.1) are being enforced and effective.
-- **E2.2.1.1 Salt master configuration (top.sls) review:** Configuration files are core components of the Salt project and are readily reviewable. The required effort is the manual review to systematically verify that the configuration enforces least-privilege scoping (C1.2.1).
+- **E2.1.1.1 Source code management (SCM) audit logs:** These logs are standard artifacts produced by version control systems used in Salt development. The effort lies in the manual review to confirm the logs demonstrate the automated checks (C2.1.1) are being enforced and effective.
+- **E2.2.1.1 Salt master configuration (top.sls) review:** Configuration files are core components of the Salt project and are readily reviewable. The required effort is the manual review to systematically verify that the configuration enforces least-privilege scoping (C2.2.1).
 
 
 **Evidence Requiring Additional Effort.** These items are not inherent to the source code and necessitate deployment, execution, or specialized tooling to generate.
@@ -91,7 +91,7 @@ This assignment helped me better understand how to evaluate and justify security
 - **E2.1.1.2 Pillar file content scan report:** Generating this report requires running a dedicated automated analysis tool specifically designed to scan the source code repository for sensitive plaintext data. This necessitates tool deployment, execution, and artifact generation, which is not a standard, inherent part of the code base.
 - **E2.2.1.2 Results of access testing:** This is dynamic testing evidence. It requires setting up a deployed system and conducting dedicated security tests to verify the outcome (restricted access), necessitating system deployment, test execution, and documentation of outcomes, moving beyond static analysis.
 - **E2.3.1.1 Secrets manager audit logs:** These are runtime operational artifacts. Their collection requires the system to be deployed and operated with specific, detailed logging enabled, and the relevant data extracted and analyzed.
-- **E2.3.1.2 Vulnerability scan report for the external secrets management system:** This evidence supports the security of the third-party component (C1.3). It requires running specialized security assessments or vulnerability scans against that independent system, requiring external tool execution and expert security interpretation.
+- **E2.3.1.2 Vulnerability scan report for the external secrets management system:** This evidence supports the security of the third-party component (C2.3). It requires running specialized security assessments or vulnerability scans against that independent system, requiring external tool execution and expert security interpretation.
 
 
 
