@@ -1,0 +1,18 @@
+### Mohammed Alfawzan
+#### Alignment of Evidence and Identified Gap:
+
+
+E1 — Gate run JID/log (SHA/signature check): Collect the JID and master/minion logs that show source_hash verification and the list of approved Git remotes; this proves the artifact and its origin for that deploy. 
+Gap: add a small release manifest (pinned SHAs/signed tag) to bind the release to specific commits.
+
+
+E2 — Negative test report (blocked unverified deploy): Trigger the pre-flight in fail-closed mode with a bad hash and archive the failed JID plus logs; this demonstrates the gate actually blocks tampered content.
+Gap: an optional fleet-wide compliance check that records the gate settings (e.g., failhard) on all nodes.
+
+
+E3 — Per-path gate-test report: Exercise each production entry path (CLI/orchestrate, salt-ssh, API) and save one JID per path as proof the gate is enforced everywhere. 
+Gap: create a simple path registry file listing allowed entry paths and owners.
+
+
+E4 — Automated discovery scan result: Run a lightweight discovery script that enumerates active entry paths and diffs them against the registry, with a CI job publishing the latest scan and gate-test artifact. 
+Gap: add that script and the CI step.
