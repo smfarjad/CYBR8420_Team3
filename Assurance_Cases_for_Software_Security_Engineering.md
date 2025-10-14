@@ -33,13 +33,17 @@ Since I was already preparing for the midterm, I made notes on the slides coveri
 Blah blah blah blah. 
 
 ### **4. Top-Level Claim 4** 
-#### C4: 
-#### Contributor:
+#### C4: Salt ensures secure communication between Master and Minion
+#### Contributor: Tyler McCoid
 #### Assurance Case Diagram:
-
+![Claim 4](./assurance_cases/Claim_Tyler.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
+The main prompt that I used for claim refinment was as follows.
 
+You are an expert software security engineer. Your job is to suggest corrections or improvements in the phrasing of assurance claims. Claims concern critical properties that are risk-related. High confidence is needed in their realization. A claim is always worded with a predicate. Avoid claims about the supporting method/techniques. <br /> Bad claim: "The system uses AES encryption." Why? Because it is not interesting; just the technology is just a means to an end, but does not provide assurance that it can actually keep the information confidential. Claim should be a reasonable goal (outcome). Good claim: “The system minimizes information disclosure during communication” <br /> Good Claim Checklist: 1. Includes an entity relevant to the argument, 2. a critical property of the entity, 3. a value for the property and related uncertainty. Use this statement as a potential claim for analysis. Explain why or why not this statement is a good claim. 
+<br />""" 
+<br />Claim here
+<br />"""
 
 ### **5. Top-Level Claim 5** 
 #### C5: 
@@ -105,9 +109,13 @@ This assignment helped me better understand how to evaluate and justify security
 ### Tyler McCoid
 #### Alignment of Evidence and Identified Gap:
 
+**Evidence either Available or Requiring Minimal Effort.**
+- **Evidence E1: Key rotation supported in code** Inside the documentation, key rotation is supported and is turned on by default. This key rotation happens daily.
+- **Evidence E2: AES encryption logs** Inside the documentation, Salt states that it uses both RSA to send a public key, then uses AES for communication afterward. This can be checked by  
+- **Evidence E3: Key acceptance configuration settings** Inside the documentation, Salt does not have auto-accept, which accepts any new minion without verification. The admin can set up a list of accepted characteristics in the autosign_grains_dir, for example, a uuid that will be automatically accepted. 
+
 #### Reflection:
-- **What did you learn from this assignment?**
-- **What did you find most useful?**
+- From this assignment, I was able to understand the importance of creating an assurance case diagram. This allowed me to understand and prove to others that security vulnerabilities are covered by pointing to pieces of evidence that are implemented in the code and documentation. What I found most useful is learning the mindset that was needed to understand and create an assurance case diagram. This mindset will allow me to be able to systematically break apart an application to identify where there could be vulnerabilities and see if there is evidence to see if they are patched. 
 
 
 ### Mohammed Alfawzan
@@ -127,7 +135,5 @@ This assignment helped me turn vague security ideas into a clear assurance story
 - **What did you learn from this assignment?**
 - **What did you find most useful?**
 
-
 ### GitHub Repository:
 [CYBR8420_Team3](https://github.com/smfarjad/CYBR8420_Team3/)
-
