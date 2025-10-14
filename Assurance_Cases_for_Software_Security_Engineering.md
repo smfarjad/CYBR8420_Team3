@@ -28,7 +28,7 @@ Blah blah blah blah.
 Blah blah blah blah. 
 
 ### **4. Top-Level Claim 4** 
-#### C4: 
+#### C4: Salt ensures secure communication between Master and Minion
 #### Contributor: Tyler McCoid
 #### Assurance Case Diagram:
 ![Claim 4](./assurance_cases/Claim_Tyler.svg)
