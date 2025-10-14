@@ -82,14 +82,11 @@ Blah blah blah blah.
 
 **Evidence either Available or Requiring Minimal Effort.**
 - **Evidence E1: Key rotation supported in code** Inside the documentation, key rotation is supported and is turned on by default. This key rotation happens daily.
-
-**Evidence Requiring Additional Effort.**
-
-
+- **Evidence E2: AES encryption logs** Inside the documentation, Salt states that it uses both RSA to send a public key, then uses AES for communication afterward. This can be checked by  
+- **Evidence E3: Key acceptance configuration settings** Inside the documentation, Salt does not have auto-accept, which accepts any new minion without verification. The admin can set up a list of accepted characteristics in the autosign_grains_dir, for example, a uuid that will be automatically accepted. 
 
 #### Reflection:
-- **What did you learn from this assignment?**
-- **What did you find most useful?**
+- From this assignment, I was able to understand the importance of creating an assurance case diagram. This allowed me to understand and prove to others that security vulnerabilities are covered by pointing to pieces of evidence that are implemented in the code and documentation. What I found most useful is learning the mindset that was needed to understand and create an assurance case diagram. This mindset will allow me to be able to systematically break apart an application to identify where there could be vulnerabilities and see if there is evidence to see if they are patched. 
 
 
 ### Mohammed Alfawzan
