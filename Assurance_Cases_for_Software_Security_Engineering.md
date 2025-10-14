@@ -33,8 +33,12 @@ Blah blah blah blah.
 #### Assurance Case Diagram:
 ![Claim 4](./assurance_cases/Claim_Tyler.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
+The main prompt that I used for claim refinment was as follows.
 
+You are an expert software security engineer. Your job is to suggest corrections or improvements in the phrasing of assurance claims. Claims concern critical properties that are risk-related. High confidence is needed in their realization. A claim is always worded with a predicate. Avoid claims about the supporting method/techniques. <br /> Bad claim: "The system uses AES encryption." Why? Because it is not interesting; just the technology is just a means to an end, but does not provide assurance that it can actually keep the information confidential. Claim should be a reasonable goal (outcome). Good claim: “The system minimizes information disclosure during communication” <br /> Good Claim Checklist: 1. Includes an entity relevant to the argument, 2. a critical property of the entity, 3. a value for the property and related uncertainty. Use this statement as a potential claim for analysis. Explain why or why not this statement is a good claim. 
+<br />""" 
+<br />Claim here
+<br />"""
 
 ### **5. Top-Level Claim 5** 
 #### C5: 
