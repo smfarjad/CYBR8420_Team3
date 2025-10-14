@@ -5,7 +5,7 @@
 #### C1: Salt minimizes the risk of unauthorized administrative access 
 #### Contributor: Joe Nguyen
 #### Assurance Case Diagram:
-![Claim 1](./images/AssuranceDiagramJoe.svg)
+![Claim 1](./assurance_cases/Claim_Joe.svg)
 #### Usefulness of AI Prompt:
 “You are a software security engineer, and you need to suggest some rebuttals for the top claim “Salt minimizes the risk of unauthorized administrative access”. With the rebuttals you find, also include some evidence that could eliminate reason for doubt.” 
 
