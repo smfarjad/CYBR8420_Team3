@@ -149,5 +149,11 @@ This assignment helped me turn vague security ideas into a clear assurance story
 - **What did you learn from this assignment?**
 - **What did you find most useful?**
 
+# Progress & Contribution Planning
+
+**Current Status:** This assignment was highly beneficial for identifying opportunities for open-source contributions through the eliminative induction process. We have enumerated multiple options for contributions; some of these require minimal effort, while others necessitate substantial effort.
+
+**Next Steps:** Our next task is to prioritize the identified gaps. Following this prioritization, we will concentrate our efforts on addressing these items with the ultimate goal of contributing impactful changes to the official Salt repository.
+
 ### GitHub Repository:
 [CYBR8420_Team3](https://github.com/smfarjad/CYBR8420_Team3/)
