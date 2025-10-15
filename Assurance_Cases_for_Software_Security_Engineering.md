@@ -56,9 +56,8 @@ You are an expert software security engineer. Your job is to suggest corrections
 #### C5: 
 #### Contributor:
 #### Assurance Case Diagram:
-
+![Claim 5](./assurance_cases/Claim_John.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
 
 
 
@@ -144,10 +143,30 @@ This assignment helped me turn vague security ideas into a clear assurance story
 
 ### John Winchester
 #### Alignment of Evidence and Identified Gap:
+**Evidence either Available or Requiring Minimal Effort.**
+
+**NOTE: Salt does not directly enforce commit signing or repository review It's heavily reliance on GitFS backends.**
+
+- **Evidence E1:** Salt relies on GitFS for state management, which can integrate with Git repositories that enforce signed commits and tags. CI/CD pipelines can verify commit authenticity before deployment and log results.  
+
+- **Evidence E2:** The Salt master configuration supports SSL verification and environment whitelisting to limit trusted Git remotes. Admins can review the master config file to confirm these options.  
+
+- **Evidence E3:** Branch protection rules and CODEOWNERS files ensure multi-party review before changes are merged. These artifacts can be exported from repository settings or version control metadata.  
+
+- **Evidence E4:** Continuous-integration workflows already include status check policies for testing and linting. Exporting the YAML definition or a successful run artifact provides proof of policy enforcement.  
+
+
+- **Evidence E5:** GitHub and other hosting services maintain auditable logs of push, merge, and permission events. Downloading these logs demonstrates maintainer activity tracking.  
+
+**Evidence Requiring Additional Effort.**
+- **Evidence E6:** Webhooks must be configured to monitor critical repository changes such as branch protection updates or permission edits. Evidence includes a screenshot or export of webhook settings showing event types and destination endpoints.  
+
+- **Evidence E7:** This evidence demonstrates that the alerting system successfully detects and records policy changes. Artifacts can include Slack notifications, SIEM logs, or GitHub alert exports showing triggered events. 
 
 #### Reflection:
 - **What did you learn from this assignment?**
-- **What did you find most useful?**
+
+I found out I need to scrutinize my work a lot more. This current work flow goes a lot more on github or other outside mechanisms. Salt does not directly enforce the commit signing or repository review. It ensures integrity through trusted GitFS backends.
 
 # Progress & Contribution Planning
 
