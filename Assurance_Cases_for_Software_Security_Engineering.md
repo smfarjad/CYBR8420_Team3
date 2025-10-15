@@ -75,9 +75,7 @@ You are an expert software security engineer. Your job is to suggest corrections
 - **Evidence E4:** Network security scan results: Just like any other OSS, Salt has had vulnerabilities that were later patched. This highlights the importance of regular network security scans. Salt does not have a built-in network security scanner but relies on external tools to scan for vulnerabilities. 
 
 - **Evidence E5:** Compliance Audit Reports: Salt relies on external authentication providers; Salt would have to work directly with the external authentication providers to obtain compliance audit reports.  
-#### Reflection:
  
-This assignment helped me better understand how to evaluate and justify security claims using evidence. I also learned a lot from browsing Salt’s documentation and features. What I found most useful was using AI in the assurance diagram. With a good prompt- it could be a great tool to help brainstorm ideas.  
 
 ### Sheikh Muhammad Farjad
 #### Alignment of Evidence and Identified Gap:
@@ -97,13 +95,6 @@ This assignment helped me better understand how to evaluate and justify security
 
 
 
-
-#### Reflection:
-- **What did you learn from this assignment?** I learnt to develop and structure a formal assurance case, connecting high-level security goals to verifiable evidence using principles like eliminative induction. I reflected on how this specific set of rules (e.g., syntax and grammatical principles) contributes to the critical framing of assurance cases through eliminative induction. While this is helpful for assurance case development, it also provided me with the pointers to use this in real life for assessing claims.
-
-- **What did you find most useful?** Prior to this assignment, I was not quite serious and cautious about using LLMs purposefully. This assignment gave me concrete pointers on how to use an LLM for refining the claims and other aspects of the assurance case, which must follow specific syntax and description rules.
-
-
 ### Tyler McCoid
 #### Alignment of Evidence and Identified Gap:
 
@@ -112,33 +103,20 @@ This assignment helped me better understand how to evaluate and justify security
 - **Evidence E2: AES encryption logs** Inside the documentation, Salt states that it uses both RSA to send a public key, then uses AES for communication afterward. This can be checked by  
 - **Evidence E3: Key acceptance configuration settings** Inside the documentation, Salt does not have auto-accept, which accepts any new minion without verification. The admin can set up a list of accepted characteristics in the autosign_grains_dir, for example, a uuid that will be automatically accepted. 
 
-#### Reflection:
-- From this assignment, I was able to understand the importance of creating an assurance case diagram. This allowed me to understand and prove to others that security vulnerabilities are covered by pointing to pieces of evidence that are implemented in the code and documentation. What I found most useful is learning the mindset that was needed to understand and create an assurance case diagram. This mindset will allow me to be able to systematically break apart an application to identify where there could be vulnerabilities and see if there is evidence to see if they are patched. 
-
 
 ### Mohammed Alfawzan
 #### Alignment of Evidence and Identified Gap:
 - **Evidence E1:** Gate run JID/log (SHA/signature check): Collect the JID and master/minion logs that show source_hash verification and the list of approved Git remotes; this proves the artifact and its origin for that deploy. 
 Gap: add a small release manifest (pinned SHAs/signed tag) to bind the release to specific commits.
 
-
 - **Evidence E2:** Negative test report (blocked unverified deploy): Trigger the pre-flight in fail-closed mode with a bad hash and archive the failed JID plus logs; this demonstrates the gate actually blocks tampered content.
 Gap: an optional fleet-wide compliance check that records the gate settings (e.g., failhard) on all nodes.
-
 
 - **Evidence E3:** Per-path gate-test report: Exercise each production entry path (CLI/orchestrate, salt-ssh, API) and save one JID per path as proof the gate is enforced everywhere. 
 Gap: create a simple path registry file listing allowed entry paths and owners.
 
-
 - **Evidence E4:** Automated discovery scan result: Run a lightweight discovery script that enumerates active entry paths and diffs them against the registry, with a CI job publishing the latest scan and gate-test artifact. 
 Gap:  no automatic way to find active entry paths or keep the report current; add a small discovery script and a CI job to run it and publish the latest scan.
-
-
-#### Reflection:
-
-This assignment helped me turn vague security ideas into a clear assurance story. Writing an outcome focused claim made me think about what production must actually achieve, and the unless rebuttals pushed me to think like a skeptic and finish each branch with real evidence such as a job id log, a config snippet, or a short report. The most useful part was mapping our planned evidence to what Salt already provides versus what we must add, which exposed practical gaps like a release manifest and a path registry and gave me a concrete checklist for next steps.
-
-
 
 
 ### John Winchester
@@ -163,10 +141,9 @@ This assignment helped me turn vague security ideas into a clear assurance story
 
 - **Evidence E7:** This evidence demonstrates that the alerting system successfully detects and records policy changes. Artifacts can include Slack notifications, SIEM logs, or GitHub alert exports showing triggered events. 
 
-#### Reflection:
-- **What did you learn from this assignment?**
+### Team Reflection:
+As a team we learned how building a structured assurance case is both analytical and rewarding, requiring careful reasoning and evidence-based validation. Each of us developed distinct insights from the process. Farjad learned how to develop and structure a formal assurance case by connecting high-level security goals to verifiable evidence using eliminative induction, and how LLMs can be used purposefully to refine claims with proper syntax and structure. Joe deepened his understanding of how to justify security claims with concrete evidence and saw how AI can support brainstorming within assurance diagrams. Tyler realized the importance of assurance case diagrams in proving that vulnerabilities are addressed and learned to adopt a systematic mindset for identifying and validating evidence of security fixes. Alfawzan learned to translate broad security ideas into clear, outcome-focused assurance claims and to test them with real evidence, which revealed practical documentation and configuration gaps to improve. John recognized the importance of scrutinizing his workflow, particularly around repository integrity and external validation mechanisms, noting how Salt relies on trusted GitFS backends rather than strict commit enforcement. Overall, the most valuable takeaway was seeing how structured reasoning, practical evidence gathering, and consistent collaboration helped us connect theoretical principles to real, verifiable security practices.
 
-I found out I need to scrutinize my work a lot more. This current work flow goes a lot more on github or other outside mechanisms. Salt does not directly enforce the commit signing or repository review. It ensures integrity through trusted GitFS backends.
 
 # Progress & Contribution Planning
 
