@@ -46,12 +46,29 @@ You are an expert software security engineer. Your job is to suggest corrections
 <br />"""
 
 ### **5. Top-Level Claim 5** 
-#### C5: 
-#### Contributor:
+#### C5: Salt mitigates unauthorized administrative access
+#### Contributor: John Winchester
 #### Assurance Case Diagram:
-
+![claim 5](./assurance_cases/Claim_John.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
+These always have a bit of mixed feelings. I usualy get mixed results when telling the AI to pretend it's a role. It also seems to cost more tokens, but if it's some what passive it also gets more positive then negative. This kind of prompt also changes depeending on what engine you prompt as well. 
+
+For this diagram I used the first prompt. 
+The prompts below:
+<details> 
+Prompt 1: 
+ You are an expert software security engineer. Your job is to suggest corrections or improvements in the phrasing of assurance claims. Claims concern critical properties that are risk-related. High confidence is needed in their realization. A claim is always worded with a predicate. Avoid claims about the supporting method/techniques. 
+Bad claim: "The system uses AES encryption." Why? Because it is not interesting; just the technology is just a means to an end, but does not provide assurance that it can actually keep the information confidential. 
+Claim should be a reasonable goal (outcome). Good claim: “The system minimizes information disclosure during communication”
+Good Claim Checklist: 1. Includes an entity relevant to the argument, 2. a critical property of the entity, 3. a value for the property and related uncertainty. 
+Use this statement as a potential claim for analysis. Explain why or why not this statement is a good claim. 
+ 
+""" 
+Canvas uses AES encryption
+"""
+
+</details>
+
 
 
 ### **1. Top-Level Claim 1** 
@@ -131,9 +148,38 @@ This assignment helped me turn vague security ideas into a clear assurance story
 ### John Winchester
 #### Alignment of Evidence and Identified Gap:
 
+
+
+**Evidence either Available or Requiring Minimal Effort.**
+
+**NOTE: Salt does not directly enforce commit signing or repository review It's heavily reliance on GitFS backends.**
+- **Evidence E1: CI job log showing `git verify-commit` and pinned SHA**  
+  Salt relies on GitFS for state management, which can integrate with Git repositories that enforce signed commits and tags. CI/CD pipelines can verify commit authenticity before deployment and log results.  
+
+- **Evidence E2: `/etc/salt/master` GitFS configuration with `verify_ssl: True` and `env_whitelist`**  
+  The Salt master configuration supports SSL verification and environment whitelisting to limit trusted Git remotes. Admins can review the master config file to confirm these options.  
+
+- **Evidence E3: Branch-protection settings and CODEOWNERS file**  
+  Branch protection rules and CODEOWNERS files ensure multi-party review before changes are merged. These artifacts can be exported from repository settings or version control metadata.  
+
+- **Evidence E4: CI workflow YAML enforcing review gates**  
+  Continuous-integration workflows already include status check policies for testing and linting. Exporting the YAML definition or a successful run artifact provides proof of policy enforcement.  
+
+
+- **Evidence E5: Repository audit log CSV or JSON export**  
+  GitHub and other hosting services maintain auditable logs of push, merge, and permission events. Downloading these logs demonstrates maintainer activity tracking.  
+
+**Evidence Requiring Additional Effort.**
+- **Evidence E6: Webhook configuration for real-time monitoring of repository events**  
+  Webhooks must be configured to monitor critical repository changes such as branch protection updates or permission edits. Evidence includes a screenshot or export of webhook settings showing event types and destination endpoints.  
+
+- **Evidence E7: Security alert report confirming detection of branch-rule or permission changes**  
+  This evidence demonstrates that the alerting system successfully detects and records policy changes. Artifacts can include Slack notifications, SIEM logs, or GitHub alert exports showing triggered events.  
+
 #### Reflection:
 - **What did you learn from this assignment?**
-- **What did you find most useful?**
+
+I found out I need to scrutinize my work a lot more. This current work flow goes a lot more on github or other outside mechanisms. Salt does not directly enforce the commit signing or repository review. It ensures integrity through trusted GitFS backends. 
 
 ### GitHub Repository:
 [CYBR8420_Team3](https://github.com/smfarjad/CYBR8420_Team3/)
