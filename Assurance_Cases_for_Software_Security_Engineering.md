@@ -55,7 +55,7 @@ You are an expert software security engineer. Your job is to suggest corrections
 ### **5. Top-Level Claim 5** 
 #### C5: 
 #### Contributor: John Winchester
-#### Assurance Case Diagram:
+#### Assurance Case Diagram: Salt prevents malicous state-file injection
 ![Claim 5](./assurance_cases/Claim_John.svg)
 **NOTE: Salt does not directly enforce commit signing or repository review It's heavily reliance on GitFS backends.**
 #### Usefulness of AI Prompt:
