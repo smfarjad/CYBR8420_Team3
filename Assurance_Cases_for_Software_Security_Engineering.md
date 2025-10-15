@@ -54,12 +54,35 @@ You are an expert software security engineer. Your job is to suggest corrections
 
 ### **5. Top-Level Claim 5** 
 #### C5: 
-#### Contributor:
+#### Contributor: John Winchester
 #### Assurance Case Diagram:
 ![Claim 5](./assurance_cases/Claim_John.svg)
+**NOTE: Salt does not directly enforce commit signing or repository review It's heavily reliance on GitFS backends.**
 #### Usefulness of AI Prompt:
+If I had to pick one and if I had to do this again I would pick the first one, or potentially weave the two together. When given full context, some AI are good at the stair step approach, but it takes some experimentation and some clear instructions to get the results you want. However this did prove to show some issues in that it expands it's fields a bit more and starts looking for connections you may not necessarily want. 
 
+Prompt(s) below
+<details>
+ You are an expert software security engineer. Your job is to suggest corrections or improvements in the phrasing of assurance claims. Claims concern critical properties that are risk-related. High confidence is needed in their realization. A claim is always worded with a predicate. Avoid claims about the supporting method/techniques. 
+Bad claim: "The system uses AES encryption." Why? Because it is not interesting; just the technology is just a means to an end, but does not provide assurance that it can actually keep the information confidential. 
+Claim should be a reasonable goal (outcome). Good claim: “The system minimizes information disclosure during communication”
+Good Claim Checklist: 1. Includes an entity relevant to the argument, 2. a critical property of the entity, 3. a value for the property and related uncertainty. 
+Use this statement as a potential claim for analysis. Explain why or why not this statement is a good claim. 
+""" 
+Canvas uses AES encryption
+"""
 
+ And
+You are an expert software security engineer. Your job is to suggest rebutting defeater for a given assurance claim using the concept of eliminative induction where support/assurance increases as reasons for doubt are eliminated. Here is an example claim for which rebutting defeaters are identified. 
+Claim: The bulb will glow when switched on
+Rebuttal 1: Unless switch not connected to light
+Rebuttal 2: Unless no power
+Rebuttal 3: Unless dead light bulb
+Use this statement as a potential claim for analysis. Keep the rebuttals short and intuitive for including in a readable diagram. 
+""" 
+The login page has no exploitable SQL injection weakness
+ 
+</details>
 
 # Assignment Part 2 - Identified Gap and Reflection
 
