@@ -2,7 +2,7 @@
 
 
 ### **1. Top-Level Claim 1** 
-#### C1: Salt minimizes the risk of unauthorized administrative access 
+#### C1: Salt minimizes the risk of unauthorized administrative access.
 #### Contributor: Joe Nguyen
 #### Assurance Case Diagram:
 ![Claim 1](./assurance_cases/Claim_Joe.svg)
@@ -25,15 +25,22 @@ Since I was already preparing for the midterm, I made notes on the slides coveri
 
 
 ### **3. Top-Level Claim 3** 
-#### C3: 
-#### Contributor: 
+#### C3: All production deployments apply content that is authentic and has verified provenance.
+#### Contributor: Mohammed Alfawzan
 #### Assurance Case Diagram:
-
+![Claim 3](./assurance_cases/Claim_Alfawzan.svg)
 #### Usefulness of AI Prompt:
-Blah blah blah blah. 
+I used the second one statement from canvas for validating my use cases: 
+
+"You are an expert software security engineer. Your job is to suggest rebutting defeater for a given assurance claim using the concept of eliminative induction where support/assurance increases as reasons for doubt are eliminated. Here is an example claim for which rebutting defeaters are identified. 
+Claim: The bulb will glow when switched on
+Rebuttal 1: Unless switch not connected to light
+Rebuttal 2: Unless no power
+Rebuttal 3: Unless dead light bulb
+Use this statement as a potential claim for analysis. Keep the rebuttals short and intuitive for including in a readable diagram."
 
 ### **4. Top-Level Claim 4** 
-#### C4: Salt ensures secure communication between Master and Minion
+#### C4: Salt ensures secure communication between Master and Minion.
 #### Contributor: Tyler McCoid
 #### Assurance Case Diagram:
 ![Claim 4](./assurance_cases/Claim_Tyler.svg)
@@ -54,29 +61,21 @@ You are an expert software security engineer. Your job is to suggest corrections
 Blah blah blah blah. 
 
 
-### **1. Top-Level Claim 1** 
-#### C1: 
-#### Contributor: Sheikh Muhammad Farjad
-#### Assurance Case Diagram:
-
-#### Usefulness of AI Prompt:
-Blah blah blah blah. 
-
 
 # Assignment Part 2 - Identified Gap and Reflection
 
 
 ### Joe Nguyen
 #### Alignment of Evidence and Identified Gap:
-- E1 - token_expire configuration logs: Salt does allow the configuration of token expiration times. The default setting time may be a bit too long and should be configured. Salt does not have detailed audit logs for token expiration configurations. Salt could implement a monitoring solution to generate and collect these logs to improve assurance.  
+- **Evidence E1:** token_expire configuration logs: Salt does allow the configuration of token expiration times. The default setting time may be a bit too long and should be configured. Salt does not have detailed audit logs for token expiration configurations. Salt could implement a monitoring solution to generate and collect these logs to improve assurance.  
 
-- E2 - NTP Status Monitoring Report: Salt provides NTP management states that enforce NTP configurations, but it doesn’t look like Salt has a built-in NTP status monitoring report. Similarly to evidence 1, Salt could incorporate monitoring tools that could collect and report on the NTP status. 
+- **Evidence E2:** NTP Status Monitoring Report: Salt provides NTP management states that enforce NTP configurations, but it doesn’t look like Salt has a built-in NTP status monitoring report. Similarly to evidence 1, Salt could incorporate monitoring tools that could collect and report on the NTP status. 
 
-- E3 - TLS Certificate Logs: Based on Salt’s documentation, Salt doesn’t provide TLS certificate logs directly. However, Salt does provide TLS support and configuration options. When configured and monitored properly, users can provide the necessary evidence. 
+- **Evidence E3:** TLS Certificate Logs: Based on Salt’s documentation, Salt doesn’t provide TLS certificate logs directly. However, Salt does provide TLS support and configuration options. When configured and monitored properly, users can provide the necessary evidence. 
 
-- E4 - Network security scan results: Just like any other OSS, Salt has had vulnerabilities that were later patched. This highlights the importance of regular network security scans. Salt does not have a built-in network security scanner but relies on external tools to scan for vulnerabilities. 
+- **Evidence E4:** Network security scan results: Just like any other OSS, Salt has had vulnerabilities that were later patched. This highlights the importance of regular network security scans. Salt does not have a built-in network security scanner but relies on external tools to scan for vulnerabilities. 
 
-- E5 - Compliance Audit Reports: Salt relies on external authentication providers; Salt would have to work directly with the external authentication providers to obtain compliance audit reports.  
+- **Evidence E5:** Compliance Audit Reports: Salt relies on external authentication providers; Salt would have to work directly with the external authentication providers to obtain compliance audit reports.  
 #### Reflection:
  
 This assignment helped me better understand how to evaluate and justify security claims using evidence. I also learned a lot from browsing Salt’s documentation and features. What I found most useful was using AI in the assurance diagram. With a good prompt- it could be a great tool to help brainstorm ideas.  
@@ -86,16 +85,16 @@ This assignment helped me better understand how to evaluate and justify security
 
 **Evidence either Available or Requiring Minimal Effort.** These items are generally available as static and standard artifacts within the Salt project repository and require primary manual review effort.
 
-- **E2.1.1.1 Source code management (SCM) audit logs:** These logs are standard artifacts produced by version control systems used in Salt development. The effort lies in the manual review to confirm the logs demonstrate the automated checks (C2.1.1) are being enforced and effective.
-- **E2.2.1.1 Salt master configuration (top.sls) review:** Configuration files are core components of the Salt project and are readily reviewable. The required effort is the manual review to systematically verify that the configuration enforces least-privilege scoping (C2.2.1).
+- **Evidence E2.1.1.1 Source code management (SCM) audit logs:** These logs are standard artifacts produced by version control systems used in Salt development. The effort lies in the manual review to confirm the logs demonstrate the automated checks (C2.1.1) are being enforced and effective.
+- **Evidence E2.2.1.1 Salt master configuration (top.sls) review:** Configuration files are core components of the Salt project and are readily reviewable. The required effort is the manual review to systematically verify that the configuration enforces least-privilege scoping (C2.2.1).
 
 
 **Evidence Requiring Additional Effort.** These items are not inherent to the source code and necessitate deployment, execution, or specialized tooling to generate.
 
-- **E2.1.1.2 Pillar file content scan report:** Generating this report requires running a dedicated automated analysis tool specifically designed to scan the source code repository for sensitive plaintext data. This necessitates tool deployment, execution, and artifact generation, which is not a standard, inherent part of the code base.
-- **E2.2.1.2 Results of access testing:** This is dynamic testing evidence. It requires setting up a deployed system and conducting dedicated security tests to verify the outcome (restricted access), necessitating system deployment, test execution, and documentation of outcomes, moving beyond static analysis.
-- **E2.3.1.1 Secrets manager audit logs:** These are runtime operational artifacts. Their collection requires the system to be deployed and operated with specific, detailed logging enabled, and the relevant data extracted and analyzed.
-- **E2.3.1.2 Vulnerability scan report for the external secrets management system:** This evidence supports the security of the third-party component (C2.3). It requires running specialized security assessments or vulnerability scans against that independent system, requiring external tool execution and expert security interpretation.
+- **Evidence E2.1.1.2 Pillar file content scan report:** Generating this report requires running a dedicated automated analysis tool specifically designed to scan the source code repository for sensitive plaintext data. This necessitates tool deployment, execution, and artifact generation, which is not a standard, inherent part of the code base.
+- **Evidence E2.2.1.2 Results of access testing:** This is dynamic testing evidence. It requires setting up a deployed system and conducting dedicated security tests to verify the outcome (restricted access), necessitating system deployment, test execution, and documentation of outcomes, moving beyond static analysis.
+- **Evidence E2.3.1.1 Secrets manager audit logs:** These are runtime operational artifacts. Their collection requires the system to be deployed and operated with specific, detailed logging enabled, and the relevant data extracted and analyzed.
+- **Evidence E2.3.1.2 Vulnerability scan report for the external secrets management system:** This evidence supports the security of the third-party component (C2.3). It requires running specialized security assessments or vulnerability scans against that independent system, requiring external tool execution and expert security interpretation.
 
 
 
@@ -120,6 +119,21 @@ This assignment helped me better understand how to evaluate and justify security
 
 ### Mohammed Alfawzan
 #### Alignment of Evidence and Identified Gap:
+- **Evidence E1:** Gate run JID/log (SHA/signature check): Collect the JID and master/minion logs that show source_hash verification and the list of approved Git remotes; this proves the artifact and its origin for that deploy. 
+Gap: add a small release manifest (pinned SHAs/signed tag) to bind the release to specific commits.
+
+
+- **Evidence E2:** Negative test report (blocked unverified deploy): Trigger the pre-flight in fail-closed mode with a bad hash and archive the failed JID plus logs; this demonstrates the gate actually blocks tampered content.
+Gap: an optional fleet-wide compliance check that records the gate settings (e.g., failhard) on all nodes.
+
+
+- **Evidence E3:** Per-path gate-test report: Exercise each production entry path (CLI/orchestrate, salt-ssh, API) and save one JID per path as proof the gate is enforced everywhere. 
+Gap: create a simple path registry file listing allowed entry paths and owners.
+
+
+- **Evidence E4:** Automated discovery scan result: Run a lightweight discovery script that enumerates active entry paths and diffs them against the registry, with a CI job publishing the latest scan and gate-test artifact. 
+Gap:  no automatic way to find active entry paths or keep the report current; add a small discovery script and a CI job to run it and publish the latest scan.
+
 
 #### Reflection:
 
