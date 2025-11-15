@@ -10,4 +10,4 @@ Please refer to [Software_Security_Engineering_Requirements.md](https://github.c
 Please refer to [Assurance_Cases_for_Software_Security_Engineering.md](https://github.com/smfarjad/CYBR8420_Team3/blob/main/Assurance_Cases_for_Software_Security_Engineering.md)
 
 ### **Assignment 4**
-Please refer to [Designing_for_Software_Security_Engineering](https://github.com/smfarjad/CYBR8420_Team3/blob/main/Designing_for_Software_Security_Engineering.md)
+Please refer to [Designing_for_Software_Security_Engineering.md](https://github.com/smfarjad/CYBR8420_Team3/blob/main/Designing_for_Software_Security_Engineering.md)
