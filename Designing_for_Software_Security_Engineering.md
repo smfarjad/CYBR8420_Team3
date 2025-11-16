@@ -67,9 +67,27 @@ Other security gaps:
 
 
 **John**:
+Much of the threats are partially mitigated with built in Salt mechanisms and priviledge settings. For applications like this, there's a lot of reliance on infrastructure, or firewall settings. There are quite a few partial mitigations due to mechanisms and configurations, but there's a heavy depandance on infrastructure to handle various other kinds of attacks. 
 
+summary of findings
+- Most threats related to *Tampering* and *Spoofing* were mitigated through Salt's ZeroMQ's authentication, signed job payloads, minion identity validation.
+- Information disclosure threats were mitigated through TLS- based transport encryption and the secure job cache behavior
+- Much of our Repudiation and Authorization threats are only partially mitigated, since Salt relies on external logging and OS level audits. 
 
+Gaps
+- Salt doesn't provide hardened privilege boundaries by default.
+- Audit keys are not cryptographically protected in some cases.
+- Keys stored on a master are not hardware backed.
+- Token reuse and lifetime policies are configurable but not enforced strongly.
+- Large reliance on proper configuration
+- Heavy reliance on infrastructure 
 
+AI Prompt used:
+<details>
+For the given DFD diagram apply STRIDE per Interaction. Focus on interactions that cross the threat boundary.
+For each interaction, enumerate plausible spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege threats.
+Propose mitigations that align with the architecture, not fight it. For each threat, suggest control options at the right layer, note tradeoffs, and highlight quick wins versus structural fixes. Where appropriate, add design guardrails that prevent entire classes of issues rather than patching symptoms.
+</details>
 
 
 ### Team Reflection:
@@ -100,7 +118,7 @@ I found the modeling tool to be the most useful and most interesting. It was sur
 
 
 **John**:
-
+I've heard of the Microsoft Threat Modeling Tool (MTMT) but I've never used or seen  it till this week. This is also a different Dataflow Diagram style then what I'm used to in terms of designa nd engineering, but there's a clear security focus. Where as the MTMT isn't necessarily intuitive from a User perspective, from an engineering perspective after you're past the learning curve, it's quite good. Using the Defense in Depth, or swiss cheese methods, you can make applications like this much more robust and secure. 
 
 
 
