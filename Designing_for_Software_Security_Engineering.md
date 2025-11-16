@@ -47,7 +47,7 @@ However, I also observed several gaps:
 
 
 **Tyler**: 
-
+Many of the threats that I looked at were either mitigated completely or partially mitigated. The ones that were fully mitigated were the threats that went along with encrypted communication between systems with the use of AES. One of the main gaps that I noticed is that lots of the partial mitigations needed to be turned on by an administrator and are not on my default. Another gap that I noticed is that public channels broadcast to all minions and could lead to problems if mis-targeted jobs are sent. 
 
 
 **Joe**:
@@ -108,7 +108,7 @@ This was my first time using a threat modeling tool. I was surprised to see how 
 
 
 **Tyler**: 
-
+This is the first time that I have used a threat modeling tool like this. This tool surprised me with how impactful it can be in pointing out where possible threats can be found. I also learned more about creating DFD diagrams, as I used them in another class but didn't fully understand them. With the way that you taught them, I was able to understand them more completely. 
 
 
 **Joe**:
