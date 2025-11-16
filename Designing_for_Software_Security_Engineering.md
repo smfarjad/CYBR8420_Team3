@@ -52,7 +52,18 @@ However, I also observed several gaps:
 
 **Joe**:
 
+SaltStack provides the building blocks for secure communication. However, its overall security posture is highly vulnerable due to a weak default security baseline. Core defenses such as TLS are optional and not enforced as the default security baseline. Additionally, many of Salt’s security features are optional and rely on administrators to enable them manually.  
+ 
 
+Other security gaps: 
+
+- No built-in rate limiting or DoS protection with known master 
+
+- Insufficient input validation framework 
+
+- No built-in SIEM integration 
+
+- Requires extensive manual hardening 
 
 
 **John**:
@@ -84,6 +95,7 @@ This was my first time using a threat modeling tool. I was surprised to see how 
 
 **Joe**:
 
+I found the modeling tool to be the most useful and most interesting. It was surprising how simply diagramming a system can surface a variety of threats. I learned a lot from making a data flow diagram. It helped me see how information moves within a system and where trust boundaries exist. Once the diagram was finished, it became much easier to visualize which parts of the system were most exposed and how different threats could occur.  
 
 
 
