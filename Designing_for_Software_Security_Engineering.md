@@ -16,6 +16,18 @@
 
 - Mitigation review and gaps: Our Salt based remote deployment looks solid on the runtime side: the Salt Master talks to the external identity provider over TLS, checks tokens against the token database, and writes activity logs. The weak spots are mostly before production. We do not consistently verify a signed release manifest or provenance, the gate does not clearly fail closed on any verification error, and there is no clear allow list for approved artifact sources or paths. On production safety we accept minion keys, but targeting and role based access control feel broad, and we do not have canary or phased rollouts or a simple rollback plan. Logs are centralized but not tamper evident and there is no alerting on risky events. The token database works, but least privilege access, rotation, and short lived tokens are not clearly enforced. Those are the main gaps to close.
 
+- The release gate does not require signed manifests or provenance and does not fail closed on verification errors.
+
+- There is no allow list for trusted artifact sources or repository paths.
+
+- Targeting and role-based access feel broad; minion keys are accepted without strong per-env/per-change validation.
+
+- There are no canary or phased rollouts and no clearly tested rollback plan.
+
+- Logs are centralized but not append-only or tamper-evident, and there is no alerting on risky events.
+
+- Token database controls are unclear: least-privilege access, rotation, and short-lived token enforcement are not consistently applied.
+
 
 
 **Farjad**:
