@@ -1,7 +1,6 @@
 # Assignment Part 1: Threat Modeling
 
 
-
 https://htmlpreview.github.io/?https://github.com/smfarjad/CYBR8420_Team3/blob/DFD-Tyler/DFD/Salt%20DFD%20Report.htm
 
 
@@ -15,7 +14,8 @@ The final, collaboratively reviewed DFD was then converted into an HTML report b
 
 ### Threat Mitigation and Identified Gaps
 
-**Alfawzan**:
+**Alfawzan - (Number of assigned threats: 20)**
+
 - Mitigation review and gaps: Our Salt based remote deployment looks solid on the runtime side: the Salt Master talks to the external identity provider over TLS, checks tokens against the token database, and writes activity logs. The weak spots are mostly before production. We do not consistently verify a signed release manifest or provenance, the gate does not clearly fail closed on any verification error, and there is no clear allow list for approved artifact sources or paths. On production safety we accept minion keys, but targeting and role based access control feel broad, and we do not have canary or phased rollouts or a simple rollback plan. Logs are centralized but not tamper evident and there is no alerting on risky events. The token database works, but least privilege access, rotation, and short lived tokens are not clearly enforced. Those are the main gaps to close.
 
 - The release gate does not require signed manifests or provenance and does not fail closed on verification errors.
@@ -32,7 +32,8 @@ The final, collaboratively reviewed DFD was then converted into an HTML report b
 
 
 
-**Farjad**:
+**Farjad - (Number of assigned threats: 21)**
+
 Some expected mitigations are already present: Salt is configured to use master–minion key-based authentication, basic artifact integrity checks via hashes in the CI pipeline, logging through system/Salt logs, and mostly HTTPS/TLS for repository and CI communication. When artifacts or checks fail, deployments generally fail closed, which matches the assumptions from our threat model.
 
 However, I also observed several gaps:
@@ -48,11 +49,13 @@ However, I also observed several gaps:
 
 
 
-**Tyler**: 
+**Tyler - (Number of assigned threats: 20)**
+
 Many of the threats that I looked at were either mitigated completely or partially mitigated. The ones that were fully mitigated were the threats that went along with encrypted communication between systems with the use of AES. One of the main gaps that I noticed is that lots of the partial mitigations needed to be turned on by an administrator and are not on my default. Another gap that I noticed is that public channels broadcast to all minions and could lead to problems if mis-targeted jobs are sent. 
 
 
-**Joe**: 
+**Joe - (Number of assigned threats: 20)**
+
 SaltStack provides the building blocks for secure communication. However, its overall security posture is highly vulnerable due to a weak default security baseline. Core defenses such as TLS are optional and not enforced as the default security baseline. Additionally, many of Salt’s security features are optional and rely on administrators to enable them manually.  
  
 
@@ -67,10 +70,11 @@ Other security gaps:
 - Requires extensive manual hardening 
 
 
-**John**:
+**John - (Number of assigned threats: 20)**
+
 Much of the threats are partially mitigated with built in Salt mechanisms and priviledge settings. For applications like this, there's a lot of reliance on infrastructure, or firewall settings. There are quite a few partial mitigations due to mechanisms and configurations, but there's a heavy depandance on infrastructure to handle various other kinds of attacks. 
 
-summary of findings
+Summary of Findings
 - Most threats related to *Tampering* and *Spoofing* were mitigated through Salt's ZeroMQ's authentication, signed job payloads, minion identity validation.
 - Information disclosure threats were mitigated through TLS- based transport encryption and the secure job cache behavior
 - Much of our Repudiation and Authorization threats are only partially mitigated, since Salt relies on external logging and OS level audits. 
