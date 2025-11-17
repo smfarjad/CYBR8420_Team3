@@ -92,35 +92,7 @@ Propose mitigations that align with the architecture, not fight it. For each thr
 
 ### Team Reflection:
 
-**Alfawzan**:
-What I learned: Drawing the data flow diagram made me think in terms of who sends what to whom across which boundary. That simple mindset surfaced the real risks at the handoff from the build and release pipeline to production and wherever tokens or admin commands cross a boundary. It also showed me how assurance claims only matter when they are tied to evidence, like a cryptographic signature check, an allow list decision, or a log that proves something happened.
-
-What I found most useful: Forcing in a pre flight verification gate and separating the identity provider, the token database, and the deployment agents was the most helpful part. Once they were distinct boxes, the missing controls almost highlighted themselves, such as signed manifests, short lived tokens, canary and rollback, and tamper evident logging. The result is a short, practical to do list that hardens what we already have without a full redesign.
-
-AI promt used: For the given DFD diagram apply STRIDE per Interaction. Focus on interactions that cross the threat boundary.
-For each interaction, enumerate plausible spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege threats.
-Propose mitigations that align with the architecture, not fight it. For each threat, suggest control options at the right layer, note tradeoffs, and highlight quick wins versus structural fixes. Where appropriate, add design guardrails that prevent entire classes of issues rather than patching symptoms.
-
-
-**Farjad**:
-This was my first time using a threat modeling tool. I was surprised to see how the Microsoft Threat Modeling Tool generated threats based on our DFD. These threats were similar to what I was  expecting in prior assignments. I also learned how trust boundaries, layered segmentation, and sanity checks contribute to improving the security of a system. The most useful takeaway from this assignment was developing a security mindset and understanding how multiple layers are important for improving the security of the system under consideration.
-
-
-
-**Tyler**: 
-This is the first time that I have used a threat modeling tool like this. This tool surprised me with how impactful it can be in pointing out where possible threats can be found. I also learned more about creating DFD diagrams, as I used them in another class but didn't fully understand them. With the way that you taught them, I was able to understand them more completely. 
-
-
-**Joe**:
-
-I found the modeling tool to be the most useful and most interesting. It was surprising how simply diagramming a system can surface a variety of threats. I learned a lot from making a data flow diagram. It helped me see how information moves within a system and where trust boundaries exist. Once the diagram was finished, it became much easier to visualize which parts of the system were most exposed and how different threats could occur.  
-
-
-
-**John**:
-I've heard of the Microsoft Threat Modeling Tool (MTMT) but I've never used or seen  it till this week. This is also a different Dataflow Diagram style then what I'm used to in terms of designa nd engineering, but there's a clear security focus. Where as the MTMT isn't necessarily intuitive from a User perspective, from an engineering perspective after you're past the learning curve, it's quite good. Using the Defense in Depth, or swiss cheese methods, you can make applications like this much more robust and secure. 
-
-
+Working on this project, we learned how challenging yet rewarding it is to use threat modeling to break down complex system architectures into clear, actionable security insights. Each of us came away with different insights. Mohammed deepened his understanding of data flow diagrams (DFD), realizing that a simple mindset of "who sends what to whom" surfaces real risks at handoffs and wherever tokens cross a boundary. He found that assurance claims only matter when tied to evidence, like a cryptographic signature or an allow list decision. Farjad reflected on how trust boundaries, layered segmentation, and sanity checks contribute to improving system security, and he was surprised by how the Microsoft Threat Modeling Tool (MTMT) generated relevant threats based on the DFD. Tyler found the threat modeling tool impactful in pointing out possible threats and gained a more complete understanding of creating DFD diagrams, building on prior knowledge. Joe found the modeling tool the most useful and interesting, realizing how simply diagramming a system and seeing where trust boundaries exist makes it easier to visualize exposed areas and potential threats. John learned about the security-focused DFD style and, despite the initial learning curve, recognized the value of the MTMT from an engineering perspective, realizing how Defense in Depth methods make applications more robust. Overall, the most useful lesson was recognizing how forcing in a pre-flight verification gate and separating components like the identity provider and deployment agents was the most helpful part, as the missing controls, such as signed manifests and short-lived tokens, almost highlighted themselves for a practical to-do list.
 
 
 # Progress & Contribution Planning
