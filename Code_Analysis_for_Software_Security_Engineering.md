@@ -110,9 +110,8 @@ The combined manual and automated review identified **[Number] critical findings
 * **What I learned:** 
 * **Most Useful:** 
 
-#### Team Member 2: [Name]
-* **What I learned:** 
-* **Most Useful:**
+#### Team Member 2: [Joe]
+I learned how valuable static analysis tools can be when reviewing large and coomplex codebase like Salt. The tools are most effective when combined with a clear review strategy. I also learned that using multiple static analysis tools will render very different results, making it important to compare them and verify which findings are truly meaningful. What I found most useful was discovering how much overlap exists between the previous assignments we created earlier and the actual security gaps in the code. 
   
 #### Team Member 3: [Name]
 * **What I learned:** 
