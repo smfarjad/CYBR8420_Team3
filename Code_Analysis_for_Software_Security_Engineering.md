@@ -68,13 +68,16 @@ The overall code review strategy was to experiment with different types of stati
    * **Files:**
      - `[salt/master.py]` - Create Master Server
      - `[salt/auth]` - Authentication
+     - `[salt/state.py]` - Salt state engine for applying remote deployments.
+     - `[salt/noxfile.py] `- Nox config used to run Salt tasks/tests (build/CI config)
 
 | Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
 | MCR-001 | `salt/master.py:1665` | Path baypass if `..\` not caught in (clean Path) | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | High |
 | MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permissions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
 | MCR-003 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password- making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
-
+| MCR-005 | state.py:1961, 2312 | Uses random.randint() to add “splay” to retry intervals. Standard PRNG is not suitable for security-critical randomness, but here it only affects timing. | CWE-330: Use of Insufficiently Random Values | Low |
+| MCR-006 | noxfile.py:197 | Uses assert for argument checking. Assertions can be disabled in optimized Python, so relying on them for validation is fragile. | CWE-703: Improper Handling of Exceptional Conditions | Low |
 
 ### 4. Automated Code Scanning Findings
 
@@ -82,18 +85,20 @@ The overall code review strategy was to experiment with different types of stati
 * **Target:**
    - `[salt/master.py]` - Create Master Server
    - `[salt/auth/ldap]` - Authentication
-
+   - `[salt/state.py]` - Salt state engine for applying remote deployments.
+   - `[salt/noxfile.py] `- Nox config used to run Salt tasks/tests (build/CI config)
 
 | Finding ID | Tool | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
 | ACR-001 | Bandit | There are some rare cases where the channel.close() function might have an exception that does not close correctly.  | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 | ACR-002 | Bandit | There are some rare cases where the clear_funcs.destroy() function might have an exception that does not close correctly. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 | ACR-003 | Synk and Semgrep | Environment() was created without enabling autoescape, this means that user input won’t be sanitized. If the username parameter contains malicious script content, it will be rendered directly into the template and executed in the user’s browser.   | CWE-79: Cross-Site Scripting | Medium |
+| ACR-004 | Bandit | On state.py and noxfile.py, Bandit reported Low-severity issues: pickle import, random.randint() for retry splay, and assert checks. | CWE-502, CWE-330, CWE-703 | Low |
 
 * **Link to Tool Output/Report:**
     - ACR-001 & ARC-002 - [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png)
     - ACR-003 - [Semgrep Report](https://semgrep.dev/orgs/josephnguyen719/findings/460996609) and [Snyk Report](https://app.snyk.io/org/joe-nguyenn/project/4e92fa28-e3ef-4f9a-8818-5b9198cab132#issue-8ce57638-586f-4be7-923a-1177ca6b413c) 
-
+    - ACR-004 – [Bandit report](https://github.com/smfarjad/CYBR8420_Team3/blob/main/Automated%20Reports/image_2025-12-06_142028932.png)
 
 ---
 
@@ -106,15 +111,17 @@ The overall code review strategy was to experiment with different types of stati
 | **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
 | **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
 | **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
+| CWE-502 | Unsafe Deserialization: Bandit and manual review flagged use of pickle in state.py. If untrusted data ever reaches this deserialization, it could allow arbitrary code execution. Currently used for internal data, but it remains a potential risk. | In a real deployment, any misuse of pickle with network or user-supplied data would be a high risk, allowing remote code execution on Salt master/minion nodes. |
+| CWE-330 | Insufficiently Random Values: state.py uses random.randint() to jitter retry intervals (“splay”). This is not cryptographically secure randomness, but it only affects timing behaviour. | Low operational risk today because it does not protect secrets; however, it shows that non-crypto PRNGs are used and should be avoided in security-critical contexts. |
 
 ### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project
 
 * **Farjad:**
 * **Joe:** I plan to contribute by improving the documentation for SaltStack's authentication process. This includes clarifying how token handling, rate-limiting, and authentication checks operate so new users and developers can better understand the system. 
-* **Inser Name:**
+* **Alfawzan:** I plan to open an issue/PR to improve state.py and noxfile.py by documenting the risks of pickle, tightening the retry “splay” logic, and replacing fragile assert checks.
 * **Tyler:** For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
-
-
+* **Inser Name:**
+  
 **Overall Assessment:** The project overall is very well put together with only a couple of places that need to be fixed.
 
 
@@ -139,12 +146,12 @@ The overall code review strategy was to experiment with different types of stati
 #### Team Member 2: Joe
 I learned how valuable static analysis tools can be when reviewing large and coomplex codebase like Salt. The tools are most effective when combined with a clear review strategy. I also learned that using multiple static analysis tools will render very different results, making it important to compare them and verify which findings are truly meaningful. What I found most useful was discovering how much overlap exists between the previous assignments we created earlier and the actual security gaps in the code. 
   
-#### Team Member 3: [Name]
-* **What I learned:** 
-* **Most Useful:** 
+#### Team Member 3: Alfawzan
+* **What I learned:**  I learned how to scope a code review to specific modules (Salt state.py and noxfile.py) and use a CWE checklist plus a tool like Bandit to keep the review focused instead of trying to read the whole project. <br>
+* **Most Useful:**  The most useful part was seeing how Bandit’s findings map to CWEs (CWE-502, CWE-330, CWE-703) and then confirming their real impact by manually reading the code.
 
 #### Team Member 4: Tyler
-* **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This a taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
+* **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This has taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
 * **Most Useful:** The most useful item I learned for this assignment is the mindset to get into and the questions to ask when developing secure code. This will help me save time when developing code in the future. 
 
 #### Team Member 5: [Name]
