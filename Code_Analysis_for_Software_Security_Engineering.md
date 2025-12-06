@@ -86,8 +86,8 @@ The overall code review strategy was to experiment with different types of stati
 
 | Finding ID | Tool | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
-| ACR-001 | [Bandit] | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
-| ACR-002 | [Bandit] | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-001 | Bandit | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-002 | Semgrep | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 | ACR-003 | Synk and Semgrep | Environment() was created without enabling autoescape, this means that user input won’t be sanitized. If the username parameter contains malicious script content, it will be rendered directly into the template and executed in the user’s browser.   | CWE-79: Cross-Site Scripting | Medium |
 
 * **Link to Tool Output/Report:**
