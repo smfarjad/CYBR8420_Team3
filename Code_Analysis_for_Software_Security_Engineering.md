@@ -85,38 +85,20 @@ The overall code review strategy was to experiment with different types of stati
 
 * **Link to Tool Output/Report:** [Semgrep](https://semgrep.dev/orgs/josephnguyen719/findings/460996609) and [Snyk](https://app.snyk.io/org/joe-nguyenn/project/4e92fa28-e3ef-4f9a-8818-5b9198cab132#issue-8ce57638-586f-4be7-923a-1177ca6b413c) 
 
-### Insert Name:
-
-### Insert Name:
-
-### Insert Name:
-
-
-
-
-
 ---
 
 ## Part 2: Key Findings and Contributions
 
-
-### 1. Summary of Key Findings and Perceived Risk (Sample)
-
-The combined manual and automated review identified **[Number] critical findings** that pose a significant risk in our hypothetical operational environment. The most severe and high-risk findings are mapped to the following CWEs:
-
 | CWE ID | Description of Significant Finding(s) | Perceived Risk in Operational Environment |
 | :--- | :--- | :--- |
-| **CWE-120** | **Buffer Overflow:** The manual review identified a classic buffer overflow in a C-based data handler. | **Critical Risk:** Potential for remote code execution or application crash, leading to complete compromise of the system's integrity and availability. |
-| **CWE-89** | **SQL Injection:** Automated scanning detected unparameterized SQL queries. | **Critical Risk:** Potential for an attacker to view, modify, or delete sensitive data in the production database, leading to a massive data breach. |
-| **CWE-798** | **Hardcoded Credentials:** Found in the authentication module (MCR-001). | **High Risk:** Compromise of a single artifact (e.g., source code leak) immediately compromises all deployed instances, undermining user session security. |
-| **CWE-79** | **Cross-Site Scripting (XSS):** Identified improper input sanitization. | **Medium Risk:** Potential for session hijacking, malicious redirects, or defacement on the user side. |
+| **CWE-79** | **Cross-Site Scripting:** Automated scanning detected that the code is using a Jinja2's Environment() without enabling auto-escaping. | In an enterprise environment, a XSS vulnerability enables account compromise, data exfiltration, internal phishing, and lateral movement across interconnected systems. |
+| **CWE-307** | **Brute Force Attack:** Manual scanning detected that the system does not enforce limits on repeated authentication attempts. The time_auth() function attempts to slow brute-force attacks by adding a uniform delay but does not enforce actual rate limits or lockouts. | This creates a high risk of brute-force attacks, making it easier for attackers to compromise accounts and gain unauthorized access in an enterprise environment|
 
-**Overall Assessment:** The project has critical vulnerabilities related to input validation and secure configuration. Remediation efforts must immediately focus on fixing the buffer overflow and SQL injection flaws.
 
 ### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project
 
 * **Farjad:**
-* **Inser Name:**
+* **Joe:** I plan to contribute by improving the documentation for SaltStack's authentication process. This includes clarifying how token handling, rate-limiting, and authentication checks operate so new users and developers can better understand the system. 
 * **Inser Name:**
 * **Inser Name:**
 * **Inser Name:**
