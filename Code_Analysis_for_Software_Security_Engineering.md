@@ -113,7 +113,19 @@ The combined manual and automated review identified **[Number] critical findings
 * **Farjad:**
 * **Inser Name:**
 * **Inser Name:**
-* **Inser Name:**
+* **Tyler:**
+
+| CWE ID | Description of Significant Finding(s) | Perceived Risk in Operational Environment |
+| :--- | :--- | :--- |
+| **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
+| **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
+| **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
+
+**Overall Assessment:** The project overall is very well put together with only a couple of places that need to be fixed.
+
+### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project <br>
+For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
+
 * **Inser Name:**
 
 ### 3. Team GitHub Repository Link
@@ -141,9 +153,9 @@ The combined manual and automated review identified **[Number] critical findings
 * **What I learned:** 
 * **Most Useful:** 
 
-#### Team Member 4: [Name]
-* **What I learned:** 
-* **Most Useful:** 
+#### Team Member 4: [Tyler]
+* **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This a taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
+* **Most Useful:** The most useful item I learned for this assignment is the mindset to get into and the questions to ask when developing secure code. This will help me save time when developing code in the future. 
 
 #### Team Member 5: [Name]
 * **What I learned:** 
