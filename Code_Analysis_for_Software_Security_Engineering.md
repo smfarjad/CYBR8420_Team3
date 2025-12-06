@@ -56,58 +56,45 @@ Our team adopted a **hybrid code review strategy**, combining **scenario/weaknes
 ### Farjad:
 
 ### Joe:
-### 1. Code Review Strategy
+### 1. Code Review Strategy (Joe)
 The overall code review strategy was to experiment with different types of static analysis tools and evaluate whether their findings reinforced one another. Another key goal of the code review was to identify overlaps with previous assignments (threat model, misuse case, or assurance case). 
 
 ### 2. Anticipated Challenges and Mitigation
 
-### Tyler:
+### Joe and Tyler:
 
 ### 3. Manual Code Review Findings
 * **Scope:** Review focused on:
-   * **File:** `[salt/master.py]` - Create Master Server
+   * **Files:**
+     - `[salt/master.py]` - Create Master Server
+     - `[salt/auth]` - Authentication
 
 | Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
 | MCR-001 | `salt/master.py:1665` | Path baypass if `..\` not caught in (clean Path) | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | High |
 | MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permissions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
+| MCR-003 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password- making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
+
 
 ### 4. Automated Code Scanning Findings
 
-* **Tools Used:** Bandit & Semgrep
-* **Target:** `[salt/master.py]` - Create Master Server
+* **Tools Used:** Bandit, Semgrep, Snyk
+* **Target:**
+   - `[salt/master.py]` - Create Master Server
+   - `[salt/auth/ldap]` - Authentication
 
-| Finding ID | Tool | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| ACR-001 | [Bandit] | `salt/master.py:1661` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
-| ACR-002 | [Bandit] | `salt/master.py:1169` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
-
-* **Link to Tool Output/Report:** <br>
- [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png) <br>
- [Semgrep Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Semgrep_Code_Findings_2025_12_06.csv)
-| Challenge Expected | Strategy to Address the Challenge |
-| :--- | :--- |
-| **Codebase Size/Noise Overload** | I expected it to be unrealistic to sift through everything because it would be easy to get lost without a clear goal. To address these challenges, I made sure to define a specific goal and scope before reviewing the code. Having a clear objective allowed me to filter the repository effectively and concentrate only on the security-relevant areas. By doing this, this helped me cut through both the size of the codebase and the noise from the static analysis tool findings.  |
-
-### 3. Manual Code Review Findings
-
-* **Scope:** Review focused on:
-    * **File:** `salt/auth` - Authentication
-  
-| Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
-| :--- | :--- | :--- | :--- | :--- |
-| MCR-001 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password- making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
-
-### 4. Automated Code Scanning Findings
-
-* **Tool(s) Used:** Snyk and Semgrep
-* **Target:** `salt/auth/ldap` - Authentication
 
 | Finding ID | Tool | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
-| ACR-001 | Synk and Semgrep | Environment() was created without enabling autoescape, this means that user input won’t be sanitized. If the username parameter contains malicious script content, it will be rendered directly into the template and executed in the user’s browser.   | CWE-79: Cross-Site Scripting | Medium |
+| ACR-001 | [Bandit] | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-002 | [Bandit] | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-003 | Synk and Semgrep | Environment() was created without enabling autoescape, this means that user input won’t be sanitized. If the username parameter contains malicious script content, it will be rendered directly into the template and executed in the user’s browser.   | CWE-79: Cross-Site Scripting | Medium |
 
-* **Link to Tool Output/Report:** [Semgrep](https://semgrep.dev/orgs/josephnguyen719/findings/460996609) and [Snyk](https://app.snyk.io/org/joe-nguyenn/project/4e92fa28-e3ef-4f9a-8818-5b9198cab132#issue-8ce57638-586f-4be7-923a-1177ca6b413c) 
+* **Link to Tool Output/Report:**
+    - ACR-001 - [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png)
+    - ACR-002 - [Semgrep Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Semgrep_Code_Findings_2025_12_06.csv)
+    - ACR-003 - [Semgrep Report](https://semgrep.dev/orgs/josephnguyen719/findings/460996609) and [Snyk Report](https://app.snyk.io/org/joe-nguyenn/project/4e92fa28-e3ef-4f9a-8818-5b9198cab132#issue-8ce57638-586f-4be7-923a-1177ca6b413c) 
+
 
 ---
 
@@ -157,7 +144,7 @@ I learned how valuable static analysis tools can be when reviewing large and coo
 * **What I learned:** 
 * **Most Useful:** 
 
-#### Team Member 4: [Tyler]
+#### Team Member 4: Tyler
 * **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This a taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
 * **Most Useful:** The most useful item I learned for this assignment is the mindset to get into and the questions to ask when developing secure code. This will help me save time when developing code in the future. 
 
