@@ -86,13 +86,12 @@ The overall code review strategy was to experiment with different types of stati
 
 | Finding ID | Tool | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
-| ACR-001 | Bandit | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
-| ACR-002 | Semgrep | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-001 | Bandit | There are some rare cases where the channel.close() function might have an exception that does not close correctly.  | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-002 | Bandit | There are some rare cases where the clear_funcs.destroy() function might have an exception that does not close correctly. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 | ACR-003 | Synk and Semgrep | Environment() was created without enabling autoescape, this means that user input won’t be sanitized. If the username parameter contains malicious script content, it will be rendered directly into the template and executed in the user’s browser.   | CWE-79: Cross-Site Scripting | Medium |
 
 * **Link to Tool Output/Report:**
-    - ACR-001 - [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png)
-    - ACR-002 - [Semgrep Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Semgrep_Code_Findings_2025_12_06.csv)
+    - ACR-001 & ARC-002 - [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png)
     - ACR-003 - [Semgrep Report](https://semgrep.dev/orgs/josephnguyen719/findings/460996609) and [Snyk Report](https://app.snyk.io/org/joe-nguyenn/project/4e92fa28-e3ef-4f9a-8818-5b9198cab132#issue-8ce57638-586f-4be7-923a-1177ca6b413c) 
 
 
