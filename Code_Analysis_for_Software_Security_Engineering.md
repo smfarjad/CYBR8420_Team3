@@ -59,7 +59,26 @@ Our team adopted a **hybrid code review strategy**, combining **scenario/weaknes
 
 ### Insert Name:
 
-### Insert Name:
+### Tyler:
+
+### 3. Manual Code Review Findings
+* **Scope:** Review focused on:
+   * **File:** `[salt/master.py]` - Create Master Server
+
+| Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
+| :--- | :--- | :--- | :--- | :--- |
+| MCR-001 | `salt/master.py:1665` | Path baypass if `..\` not caught in (clean Path) | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | High |
+| MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permisions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
+
+### 4. Automated Code Scanning Findings
+
+* **Tools Used:** Bandit & Semgrep
+* **Target:** `[salt/master.py]` - Create Master Server
+
+| Finding ID | Tool | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| ACR-001 | [Bandit] | `salt/master.py:1661` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-002 | [Bandit] | `salt/master.py:1169` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 
 ### Insert Name:
 
