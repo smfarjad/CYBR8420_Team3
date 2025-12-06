@@ -117,27 +117,21 @@ The overall code review strategy was to experiment with different types of stati
 | :--- | :--- | :--- |
 | **CWE-79** | **Cross-Site Scripting:** Automated scanning detected that the code is using a Jinja2's Environment() without enabling auto-escaping. | In an enterprise environment, a XSS vulnerability enables account compromise, data exfiltration, internal phishing, and lateral movement across interconnected systems. |
 | **CWE-307** | **Brute Force Attack:** Manual scanning detected that the system does not enforce limits on repeated authentication attempts. The time_auth() function attempts to slow brute-force attacks by adding a uniform delay but does not enforce actual rate limits or lockouts. | This creates a high risk of brute-force attacks, making it easier for attackers to compromise accounts and gain unauthorized access in an enterprise environment|
-
+| **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
+| **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
+| **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
 
 ### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project
 
 * **Farjad:**
 * **Joe:** I plan to contribute by improving the documentation for SaltStack's authentication process. This includes clarifying how token handling, rate-limiting, and authentication checks operate so new users and developers can better understand the system. 
 * **Inser Name:**
-* **Tyler:**
+* **Tyler:** For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
 
-| CWE ID | Description of Significant Finding(s) | Perceived Risk in Operational Environment |
-| :--- | :--- | :--- |
-| **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
-| **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
-| **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
 
 **Overall Assessment:** The project overall is very well put together with only a couple of places that need to be fixed.
 
-### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project <br>
-For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
 
-* **Inser Name:**
 
 ### 3. Team GitHub Repository Link
 
