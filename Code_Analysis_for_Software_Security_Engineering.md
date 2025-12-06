@@ -36,6 +36,9 @@ Our team adopted a **hybrid code review strategy**, combining **scenario/weaknes
 | MCR-002 | `utils/input_validator.js:12` | User input for `username` is not properly sanitized before being used in an HTML context. | CWE-79: Improper Neutralization of Input during Web Page Generation ('XSS') | Medium |
 | MCR-003 | `db/user_management.c:101` | Use of `strcpy()` without bounds checking when copying user-supplied data into a fixed-size buffer. | CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') | Critical |
 | MCR-004 | [Add another finding or put N/A] | [Description] | [CWE] | [Severity] |
+| MCR-007 | localfs.py:write_token | Token files are stored in plaintext and may include user-related metadata, exposing sensitive information if the filesystem is compromised. | CWE-522 (Insufficiently Protected Credentials) | Medium |
+| MCR-008 | localfs.py:read_token | Token contents are trusted without authenticity checks; a forged token file could allow impersonation or privilege escalation. | CWE-345 (Insufficient Verification of Data Authenticity) | High |
+| MCR-009 | __init__.py:validate_token | Token-based authorization trusts embedded roles without checking for role changes, allowing privilege persistence. | CWE-285 (Improper Authorization) | High |
 
 * **Total Manual Findings:** [Number]
 
@@ -78,6 +81,9 @@ The overall code review strategy was to experiment with different types of stati
 | MCR-003 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password- making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
 | MCR-005 | state.py:1961, 2312 | Uses random.randint() to add “splay” to retry intervals. Standard PRNG is not suitable for security-critical randomness, but here it only affects timing. | CWE-330: Use of Insufficiently Random Values | Low |
 | MCR-006 | noxfile.py:197 | Uses assert for argument checking. Assertions can be disabled in optimized Python, so relying on them for validation is fragile. | CWE-703: Improper Handling of Exceptional Conditions | Low |
+| MCR-007 | localfs.py:write_token | Token files are stored in plaintext and contain user metadata, exposing sensitive information if the filesystem is compromised. | CWE-200 | Medium |
+| MCR-008 | localfs.py:read_token | Token contents are trusted without authenticity checks; a forged token file could escalate privileges or impersonate users. | CWE-345 | High |
+| MCR-009 | __init__.py:validate_token | Authorization relies solely on token-embedded attributes without revalidating user roles, allowing privilege persistence after role changes. | CWE-285 | High |
 
 ### 4. Automated Code Scanning Findings
 
@@ -111,8 +117,10 @@ The overall code review strategy was to experiment with different types of stati
 | **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
 | **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
 | **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
+| **CWE-703** | **Improper Handling of Exceptional Conditions:** Use of `assert` in production code (`noxfile.py`). If Python is optimized (‐O flag), asserts are removed, eliminating validation logic. | Low: If packaged by downstream vendors or deployed with optimization flags, critical validation would disappear, enabling misuse paths and breaking assumptions made in assurance cases. |
 | CWE-502 | Unsafe Deserialization: Bandit and manual review flagged use of pickle in state.py. If untrusted data ever reaches this deserialization, it could allow arbitrary code execution. Currently used for internal data, but it remains a potential risk. | In a real deployment, any misuse of pickle with network or user-supplied data would be a high risk, allowing remote code execution on Salt master/minion nodes. |
 | CWE-330 | Insufficiently Random Values: state.py uses random.randint() to jitter retry intervals (“splay”). This is not cryptographically secure randomness, but it only affects timing behaviour. | Low operational risk today because it does not protect secrets; however, it shows that non-crypto PRNGs are used and should be avoided in security-critical contexts. |
+
 
 ### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project
 
@@ -120,7 +128,7 @@ The overall code review strategy was to experiment with different types of stati
 * **Joe:** I plan to contribute by improving the documentation for SaltStack's authentication process. This includes clarifying how token handling, rate-limiting, and authentication checks operate so new users and developers can better understand the system. 
 * **Alfawzan:** I plan to open an issue/PR to improve state.py and noxfile.py by documenting the risks of pickle, tightening the retry “splay” logic, and replacing fragile assert checks.
 * **Tyler:** For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
-* **Inser Name:**
+* **John:**  I plan on finding more open source communities for the various tools that we have at work and at UNO to see if they're something worth contributing heavily to. In this specific instance I'd echo Joe's contribution in that there needs to be better clarity in how token handling is accomplished in a better fashion on their documentation, as right now it's some what unclear to new users. 
   
 **Overall Assessment:** The project overall is very well put together with only a couple of places that need to be fixed.
 
@@ -154,6 +162,6 @@ I learned how valuable static analysis tools can be when reviewing large and coo
 * **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This has taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
 * **Most Useful:** The most useful item I learned for this assignment is the mindset to get into and the questions to ask when developing secure code. This will help me save time when developing code in the future. 
 
-#### Team Member 5: [Name]
-* **What I learned:** 
-* **Most Useful:** 
+#### Team Member 5: John
+* **What I learned:** Manual review identified subtle architectural weakness (Authorization checks). Some potions of those weaknesses can't really be picked up by a static analysis tools Bandit didn't catch anything, and semgrep will not function on my current system. It would make sense that the static analysis tools couldn't find the vulnerabilities as they'r elogica and trust boundary based, not direct coding patterns
+* **Most Useful:** hybrid approachs and live instances when possible will most likely give you the best results when looking for vulnerabiltiies. This is why companies such as tenable and crowdstrike exist so taht you can have that constant watch on certain portions of your system. This process lays out exactly why good code hygiene, manual review, and automated review all work to reveal those logical and architectual level weaknesses. I learned a lot more investigation code skills, and their application. 
