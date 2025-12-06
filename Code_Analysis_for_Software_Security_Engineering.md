@@ -72,7 +72,7 @@ The overall code review strategy was to experiment with different types of stati
   
 | Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
-| MCR-001 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
+| MCR-001 | `salt/auth/__init__.py:115` | The time_auth() function has no rate limiting, maximum attempt counts, or account lockout mechanisms. The technique shown above does add a small delay to each failure, but it is not a substitute for a robust lockout mechanism. The attacker is only slowed down by the delay, but they are not stopped from eventually guessing the password- making it susceptible to brute force attacks. This finding is also consistent with our earlier threat model, which identified the lack of built-in rate limiting as a potential vulnerability.   | CWE- 307: Improper Restriction of Excessive Authentication Attempts  | High |
 
 ### 4. Automated Code Scanning Findings
 
