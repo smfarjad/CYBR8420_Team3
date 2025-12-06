@@ -61,6 +61,30 @@ The overall code review strategy was to experiment with different types of stati
 
 ### 2. Anticipated Challenges and Mitigation
 
+### Tyler:
+
+### 3. Manual Code Review Findings
+* **Scope:** Review focused on:
+   * **File:** `[salt/master.py]` - Create Master Server
+
+| Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
+| :--- | :--- | :--- | :--- | :--- |
+| MCR-001 | `salt/master.py:1665` | Path baypass if `..\` not caught in (clean Path) | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | High |
+| MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permissions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
+
+### 4. Automated Code Scanning Findings
+
+* **Tools Used:** Bandit & Semgrep
+* **Target:** `[salt/master.py]` - Create Master Server
+
+| Finding ID | Tool | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| ACR-001 | [Bandit] | `salt/master.py:1661` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+| ACR-002 | [Bandit] | `salt/master.py:1169` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+
+* **Link to Tool Output/Report:** <br>
+ [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png) <br>
+ [Semgrep Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Semgrep_Code_Findings_2025_12_06.csv)
 | Challenge Expected | Strategy to Address the Challenge |
 | :--- | :--- |
 | **Codebase Size/Noise Overload** | I expected it to be unrealistic to sift through everything because it would be easy to get lost without a clear goal. To address these challenges, I made sure to define a specific goal and scope before reviewing the code. Having a clear objective allowed me to filter the repository effectively and concentrate only on the security-relevant areas. By doing this, this helped me cut through both the size of the codebase and the noise from the static analysis tool findings.  |
@@ -100,7 +124,19 @@ The overall code review strategy was to experiment with different types of stati
 * **Farjad:**
 * **Joe:** I plan to contribute by improving the documentation for SaltStack's authentication process. This includes clarifying how token handling, rate-limiting, and authentication checks operate so new users and developers can better understand the system. 
 * **Inser Name:**
-* **Inser Name:**
+* **Tyler:**
+
+| CWE ID | Description of Significant Finding(s) | Perceived Risk in Operational Environment |
+| :--- | :--- | :--- |
+| **CWE-22** | **Path Traversal:** The manual review identified a possiblility for Path Traversal. | **Critical Risk:** Potential for traversal to unguarded portions of the code/file structure with the input of a new path that would be executed. |
+| **CWE-362** | **Race Condition:** The manual review identified a possiblility for Race Condition. | **High Risk:** Potential for an attacker to manipulate the key rotation as multiple file pulls from the same key file rotations. |
+| **CWE-703** | **Improper Check or Handling of Exceptional Conditions:** Automated scanning detected multiple Improper Check or Handling of Exceptional Conditions. | **Low Risk:** This rarely does not anticipates how an exception could occur. |
+
+**Overall Assessment:** The project overall is very well put together with only a couple of places that need to be fixed.
+
+### 2. Planned or Ongoing Contributions to the Upstream Open-Source Project <br>
+For the future, I plan to look more into the documentation and possibly make a step-by-step guide to enable different security features, as not all of them are turned on to begin with. This could then be implemented into the getting-started documentation. 
+
 * **Inser Name:**
 
 ### 3. Team GitHub Repository Link
@@ -127,9 +163,9 @@ I learned how valuable static analysis tools can be when reviewing large and coo
 * **What I learned:** 
 * **Most Useful:** 
 
-#### Team Member 4: [Name]
-* **What I learned:** 
-* **Most Useful:** 
+#### Team Member 4: [Tyler]
+* **What I learned:** For this assignment, I learned how to manuly perform a code assesment. This a taught me what coding practices I need to change personally to create secure code that I would feel safe deploying for others to view. This is a good habit to get into as it will save time and money when developing for a client in the future. 
+* **Most Useful:** The most useful item I learned for this assignment is the mindset to get into and the questions to ask when developing secure code. This will help me save time when developing code in the future. 
 
 #### Team Member 5: [Name]
 * **What I learned:** 
