@@ -68,7 +68,7 @@ Our team adopted a **hybrid code review strategy**, combining **scenario/weaknes
 | Finding ID | Location (File:Line) | Description of Vulnerability | CWE Mapping | Severity |
 | :--- | :--- | :--- | :--- | :--- |
 | MCR-001 | `salt/master.py:1665` | Path baypass if `..\` not caught in (clean Path) | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | High |
-| MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permisions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
+| MCR-002 | `salt/master.py:373` | `Maintenance.handle_key_rptate` and multiple other systems check the same file for key rotations, which could change and cause denial of permissions. | CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | Medium |
 
 ### 4. Automated Code Scanning Findings
 
@@ -79,6 +79,10 @@ Our team adopted a **hybrid code review strategy**, combining **scenario/weaknes
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ACR-001 | [Bandit] | `salt/master.py:1661` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
 | ACR-002 | [Bandit] | `salt/master.py:1169` | Try, Except, Pass detected. | CWE-703: Improper Check or Handling of Exceptional Conditions | Low |
+
+* **Link to Tool Output/Report:** <br>
+ [Bandit Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Screenshot%202025-12-05%20203228.png) <br>
+ [Semgrep Report](https://github.com/smfarjad/CYBR8420_Team3/blob/assignment5-Tyler/Automated%20Reports/Semgrep_Code_Findings_2025_12_06.csv)
 
 ### Insert Name:
 
